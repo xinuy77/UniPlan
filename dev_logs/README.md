@@ -6,7 +6,7 @@ Please make your own directory in here for dev logs.
 Dev Logs Directory naming scheme is following   
 
 ```
-<StudentUsername>_devLog
+<StudentUsername>_DevLog
 ```
 
 Dev Logs naming scheme is following
