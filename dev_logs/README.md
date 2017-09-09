@@ -9,7 +9,7 @@ Dev Logs naming scheme is following
 g_<StudentUsername>_wk<X>.txt
 ```
 
-**StudentUsername** is the student's yser acciybt ub repository.   
-**X** is week's ID (e.g., *wk1*)   
-**Each member is to submit **12** weekly logs, starting **September 19**.   
+- **StudentUsername** is the student's yser acciybt ub repository.   
+- **X** is week's ID (e.g., *wk1*)   
+- Each member is to submit **12** weekly logs, starting **September 19**.   
 
