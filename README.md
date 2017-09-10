@@ -8,5 +8,5 @@ Since our Project name is undefined, our current repository name is temporary.
 	- Riley Troke-Barriault
 	- Tom Robin
 	- Yu Yamanaka
-	- ?
+	- Lairu Wu
 - Project Name: *undefined*
