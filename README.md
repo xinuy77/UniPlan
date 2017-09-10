@@ -1,6 +1,5 @@
-# Project Name Here
+# Mobile App Project
 Main repository for Mobile App Project.    
-Since our Project name is undefined, our current repository name is temporary.
 
 ## Preamble
 - Team Name: *Undefined*
