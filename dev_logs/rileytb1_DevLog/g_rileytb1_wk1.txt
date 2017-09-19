@@ -1,0 +1,13 @@
+Goals for week 1:
+  Achieve a reasonable grasp of Android app development through online tutorials.
+  Complete Deliverable 1 (Project report)
+Achievements:
+  Completed Android Studio tutorial for basic development (https://developer.android.com/training/basics/firstapp/index.html)
+  Created initial draft for Deliverabe 1
+  Performed final edits for Deliverable 1 and slides for in-class presentation after review by group members.
+Upcoming Goals (Week 2):
+  Become familiar with SQLite database creation/management on Android.
+  Further familiarize self with overall Android app development.
+Note:
+  Weekly meeting (scheduled 19-09-2017) cancelled due to group members requiring further time for research on app development for Android.
+  Team will meet on 21-09-2017 at 2:30 if necessary, otherwise next meeting is scheduled for 26-09-2017.
