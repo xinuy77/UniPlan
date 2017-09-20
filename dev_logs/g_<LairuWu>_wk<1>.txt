@@ -1,0 +1,10 @@
+LairuWu_DevLog Week1
+
+Finished:
+1. Pointed the aim of design: an android application
+2. Purpose of the application: an integrated study plan application
+3. Based on: SQLite and Android Studio
+4. Basically know how to create a mobile app with several Textviews
+
+Going to:
+Keep researching on SQLite and Android Studio
