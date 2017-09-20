@@ -8,4 +8,4 @@ Main repository for Mobile App Project.
 	- Tom Robin
 	- Yu Yamanaka
 	- Lairu Wu
-- Project Name: Term Calendar
+- Project Name: UniPlan
