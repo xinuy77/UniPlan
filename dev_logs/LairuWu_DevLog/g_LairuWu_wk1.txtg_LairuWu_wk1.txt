@@ -1,10 +1,12 @@
 LairuWu_DevLog Week1
 
 Finished:
-1. Pointed the aim of design: an android application
-2. Purpose of the application: an integrated study plan application
-3. Based on: SQLite and Android Studio
-4. Basically know how to create a mobile app with several Textviews
+1. Met team members
+2. Pointed the aim of design: an android application
+3. Purpose of the application: an integrated study plan application
+4. Based on: SQLite and Android Studio
+5. Basically know how to create a mobile app with several Textviews
+6. Prepared for the first deliverable(presenation)
 
 Going to:
 Keep researching on SQLite and Android Studio
