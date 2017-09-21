@@ -1,0 +1,10 @@
+Week 1 Dev Log:
+	Work completed: 
+		Deliverable 1
+		Deliverable 1 presentation
+		Basic tutorials in Android Studio (AS)
+
+	Duties for next week:
+		Begin more advanced lessons in AS
+		Develop understanding for SQLite, a database system that is planned on being implemented
+		Start creating barebones of app (maybe)
