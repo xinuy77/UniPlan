@@ -1,0 +1,9 @@
+Goals for week 1:
+  - Learn basics of Android app development through materials online
+  - Be familiarized with SQLite 
+  - Complete Deliverable 1
+Achievement:
+  - Initialized framework of app, contains UI prototype
+  - completed Deliverable 1
+Goals for week 2:
+  - Add Skelton code for required functions if possible
