@@ -1,0 +1,8 @@
+Goals for week 1:
+  Become familiar with SQLite database creation/management on Android.
+  Further familiarize self with overall Android app development.
+Achievements:
+  Completed Android Studio tutorial for SQLite
+  Continued online tutorials re: UI creation for Android
+Upcoming Goals (Week 2): 
+  Begin work on SQLite databse for app.
