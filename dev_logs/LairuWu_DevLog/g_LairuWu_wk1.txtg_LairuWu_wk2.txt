@@ -1,1 +1,8 @@
+LairuWu_DevLog Week2
 
+Finished:
+1. have a prototype code
+2. focus on database and UI
+
+Going to:
+Keep working the tutorial of Android Studio
