@@ -1,0 +1,8 @@
+Week 2 Dev Log:
+	Work completed: 
+		File system in Android tutorial
+		Basic UI Android tutorial
+
+	Duties for next week:
+		Work on UI of prototype
+		
