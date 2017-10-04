@@ -1,1 +1,10 @@
+LairuWu_DevLog Week3
 
+Finished:
+1. have a basic table for DB logic we need
+2. find a possible method of implementing 4 pages for 4 functions-fragment page and onClick action
+3. did some experiments on fragment
+
+Going to:
+Keep working the tutorial of Android Studio
+Do more experients to make the app of 4 functions in 4pages become possible
