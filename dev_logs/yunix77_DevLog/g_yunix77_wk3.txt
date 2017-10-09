@@ -1,0 +1,6 @@
+Goals for week 3:
+	- Complete filling required Data in excel
+Achievement:
+ 	- Discussed and filled required data variables in excel spreadsheet with Riley Troke-Barriault.
+Goals for week 4:
+	- Begin coding based on initialized data model
