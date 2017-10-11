@@ -1,0 +1,9 @@
+Goals for week 4:
+  Finalize database model
+  Begin coding for SQLite database.
+Achievements:
+  Finalized database model.
+  Began coding for database control class
+Upcoming Goals (Week 5): 
+  Finish control class constructor
+  Begin (and ideally complete) coding for get/set methods of control class
