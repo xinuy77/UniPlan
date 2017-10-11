@@ -2,7 +2,7 @@ Goals for week 3:
   Begin work on SQLite databse for app.
 Achievements:
   Discussed and presented potential database models with Yu Yamanaka.
-Upcoming Goals (Week 3): 
+Upcoming Goals (Week 4): 
   Finalize database model
   Begin coding for SQLite database.
 Note: 
