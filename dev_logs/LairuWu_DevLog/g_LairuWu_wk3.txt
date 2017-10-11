@@ -6,5 +6,5 @@ Finished:
 3. did some experiments on fragment
 
 Going to:
-Keep working the tutorial of Android Studio
+Keep working on the tutorial of Android Studio
 Do more experients to make the app of 4 functions in 4pages become possible
