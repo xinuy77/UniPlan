@@ -1,3 +1,5 @@
+//Class used to construct and access database
+
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
