@@ -1,0 +1,7 @@
+Goals for week 4:
+	- Begin coding for database model
+Achievement:
+ 	- Added test codes for DB control functions
+	- Fixed few issues in DB initialization/manipulation module
+Goals for week 5:
+	- Add required DB control functions
