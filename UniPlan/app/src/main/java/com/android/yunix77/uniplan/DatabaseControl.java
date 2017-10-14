@@ -1,4 +1,4 @@
-//Class used to modify database
+package com.android.yunix77.uniplan;//Class used to modify database
 
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
@@ -12,7 +12,7 @@ public class DatabaseControl {
 
     //Initialize database helper
     public DatabaseControl(Context context){
-        DatabaseHelper helper = new DatabaseHelper(context);
+        helper = new DatabaseHelper(context);
     }
 
     //Add functions
@@ -32,12 +32,13 @@ public class DatabaseControl {
         String result;
 
         try {
-            db.insertOrThrow("Term", null, values);
+            db.insertOrThrow("Term_Schedule", null, values);
             result = "Term added successfully";
         } catch(SQLException x){
             result = x.getMessage();
         }
         return result;
+
     }
     //Add course
     public String addCourse(int t_i, String c, String n){
@@ -48,7 +49,7 @@ public class DatabaseControl {
         ContentValues values = new ContentValues();
         values.put("TERM_ID", t_i);
         values.put("COURSE_CODE", c);
-        values.put("CNAME", c);
+        values.put("CNAME", n);
 
         //String to return
         String result;
@@ -62,7 +63,7 @@ public class DatabaseControl {
         return result;
     }
     //Add Instructor (TA or Prof)
-    public String addInstructor(int n, int c_i, int s, String e){
+    public String addInstructor(String n, int c_i, int s, String e){
         //Database in write mode
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -85,7 +86,7 @@ public class DatabaseControl {
         return result;
     }
     //Add Event (Item in Calendar)
-    public String addEvent(int c_i, String en, int t, int w, int g, String d, String s_t, String e_t, String n, String l){
+    public String addEvent(int c_i, String en, int t, int w, int g, String d, String s_t, String e_t, String n, String l) {
         //Database in write mode
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -148,15 +149,16 @@ public class DatabaseControl {
 
         //Query full Term table
         Cursor c = db.query(
-                "Term", //Query Term table
+                "Term_Schedule", //Query Term table
                 null,   //Query all columns
                 null,   //Query all rows
                 null,   //No WHERE clause
                 null,   //No args for WHERE
                 null,   //No grouping
                 null,   //No HAVING clause
-                "START_DATE"   //Order by start date
+                null   //Order by start date
         );
+        //Cursor  c = db.rawQuery("select * from Term_Schedule",null);
         return c;
     }
     //Get Course by Term ID
@@ -167,7 +169,7 @@ public class DatabaseControl {
         //Arguments for query
         String[] args = {Integer.toString(t_id)};
         //Query Course table by Term ID
-        Cursor c = db.query(
+       /* Cursor c = db.query(
                 "Course",       //Query Course table
                 null,           //Query all columns
                 "TERM_ID = ?",  //Query rows by TERM_ID
@@ -175,8 +177,8 @@ public class DatabaseControl {
                 null,           //No grouping
                 null,           //No HAVING clause
                 null            //No ordering
-        );
-
+        );*/
+        Cursor  c = db.rawQuery("SELECT * FROM Course WHERE TERM_ID=?", args);
         return c;
     }
     //Get Instructors by Course
@@ -187,7 +189,7 @@ public class DatabaseControl {
         //Arguments for query
         String[] args = {Integer.toString(c_id)};
         //Query Instructor table by Course ID
-        Cursor c = db.query(
+       /* Cursor c = db.query(
                 "Instructor",       //Query Course table
                 null,           //Query all columns
                 "COURSE_ID = ?",  //Query rows by COURSE_ID
@@ -195,7 +197,9 @@ public class DatabaseControl {
                 null,           //No grouping
                 null,           //No HAVING clause
                 "INAME"         //Order by name
-        );
+        );*/
+
+        Cursor  c = db.rawQuery("SELECT * FROM Instructor WHERE COURSE_ID=?", args);
 
         return c;
     }
@@ -207,7 +211,7 @@ public class DatabaseControl {
         //Arguments for query
         String[] args = {Integer.toString(c_id)};
         //Query Course table by Term ID
-        Cursor c = db.query(
+       /* Cursor c = db.query(
                 "EVENT",       //Query Course table
                 null,           //Query all columns
                 "COURSE_ID = ?",  //Query rows by COURSE_ID
@@ -215,11 +219,14 @@ public class DatabaseControl {
                 null,           //No grouping
                 null,           //No HAVING clause
                 "DATE, START_TIME"            //Order by date and time
-        );
+        );*/
+
+        Cursor  c = db.rawQuery("SELECT * FROM Event WHERE COURSE_ID=?", args);
 
         return c;
     }
     //Get Timetable items by Parent
+    /*
     public Cursor getEvents(int p_id, int type){
         //DB in read mode
         SQLiteDatabase db = helper.getReadableDatabase();
@@ -238,5 +245,5 @@ public class DatabaseControl {
         );
 
         return c;
-    }
+    }*/
 }
