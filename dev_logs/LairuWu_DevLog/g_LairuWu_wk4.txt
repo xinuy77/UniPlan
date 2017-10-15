@@ -1,9 +1,8 @@
 LairuWu_DevLog Week4
 
 Finished:
-1. completing table logic
-2. testing fragment, but met problem(NullPointer) and cannot create new page for that
-3. debugging NullPointer but failed
+1. testing fragment, but met problem(NullPointer) and cannot create new page for that
+2. debugging NullPointer but failed
 
 Going to:
 Keep working on the tutorial of Android Studio
