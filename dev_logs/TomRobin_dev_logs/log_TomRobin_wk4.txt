@@ -1,0 +1,9 @@
+Week 4 Dev Log:
+	Work completed: 
+		Basic pages with side drawer UI
+		DB interction for MainActivity
+		Started event calender (stuck)
+
+	Duties for next week:
+		Work on event calender
+		
