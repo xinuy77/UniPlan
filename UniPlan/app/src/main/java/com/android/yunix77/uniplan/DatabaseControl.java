@@ -11,13 +11,13 @@ public class DatabaseControl {
     DatabaseHelper helper;
 
     //Initialize database helper
-    public DatabaseControl(Context context){
+    public DatabaseControl(Context context) {
         helper = new DatabaseHelper(context);
     }
 
     //Add functions
     //Add Term
-    public String addTerm(int y, int s, String s_d, String e_d){
+    public String addTerm(int y, int s, String s_d, String e_d) {
         //Database in write mode
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -34,14 +34,15 @@ public class DatabaseControl {
         try {
             db.insertOrThrow("Term_Schedule", null, values);
             result = "Term added successfully";
-        } catch(SQLException x){
+        } catch (SQLException x) {
             result = x.getMessage();
         }
         return result;
 
     }
+
     //Add course
-    public String addCourse(int t_i, String c, String n){
+    public String addCourse(int t_i, String c, String n) {
         //Database in write mode
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -57,13 +58,14 @@ public class DatabaseControl {
         try {
             db.insertOrThrow("Course", null, values);
             result = "Course added successfully";
-        } catch(SQLException x){
+        } catch (SQLException x) {
             result = x.getMessage();
         }
         return result;
     }
+
     //Add Instructor (TA or Prof)
-    public String addInstructor(String n, int c_i, int s, String e){
+    public String addInstructor(String n, int c_i, int s, String e) {
         //Database in write mode
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -80,11 +82,12 @@ public class DatabaseControl {
         try {
             db.insertOrThrow("Instructor", null, values);
             result = "Instructor added successfully";
-        } catch(SQLException x){
+        } catch (SQLException x) {
             result = x.getMessage();
         }
         return result;
     }
+
     //Add Event (Item in Calendar)
     public String addEvent(int c_i, String en, int t, int w, int g, String d, String s_t, String e_t, String n, String l) {
         //Database in write mode
@@ -109,13 +112,14 @@ public class DatabaseControl {
         try {
             db.insertOrThrow("Event", null, values);
             result = "Calendar Event added successfully";
-        } catch(SQLException x){
+        } catch (SQLException x) {
             result = x.getMessage();
         }
         return result;
     }
+
     //Add Timetable item
-    public String addTime(int p_i, int t, String l, String n, String s_t, String e_t, int d){
+    public String addTime(int p_i, int t, String l, String n, String s_t, String e_t, int d) {
         //Database in write mode
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -135,7 +139,7 @@ public class DatabaseControl {
         try {
             db.insertOrThrow("Time", null, values);
             result = "Timetable Event added successfully";
-        } catch(SQLException x){
+        } catch (SQLException x) {
             result = x.getMessage();
         }
         return result;
@@ -148,7 +152,7 @@ public class DatabaseControl {
         SQLiteDatabase db = helper.getReadableDatabase();
 
         //Query full Term table
-        Cursor c = db.query(
+        /*Cursor c = db.query(
                 "Term_Schedule", //Query Term table
                 null,   //Query all columns
                 null,   //Query all rows
@@ -157,12 +161,13 @@ public class DatabaseControl {
                 null,   //No grouping
                 null,   //No HAVING clause
                 null   //Order by start date
-        );
-        //Cursor  c = db.rawQuery("select * from Term_Schedule",null);
+        );*/
+        Cursor c = db.rawQuery("select * from Term_Schedule", null);
         return c;
     }
+
     //Get Course by Term ID
-    public Cursor getCourses(int t_id){
+    public Cursor getCourses(int t_id) {
         //DB in read mode
         SQLiteDatabase db = helper.getReadableDatabase();
 
@@ -178,11 +183,12 @@ public class DatabaseControl {
                 null,           //No HAVING clause
                 null            //No ordering
         );*/
-        Cursor  c = db.rawQuery("SELECT * FROM Course WHERE TERM_ID=?", args);
+        Cursor c = db.rawQuery("SELECT * FROM Course WHERE TERM_ID=?", args);
         return c;
     }
+
     //Get Instructors by Course
-    public Cursor getInstructors(int c_id){
+    public Cursor getInstructors(int c_id) {
         //DB in read mode
         SQLiteDatabase db = helper.getReadableDatabase();
 
@@ -199,12 +205,13 @@ public class DatabaseControl {
                 "INAME"         //Order by name
         );*/
 
-        Cursor  c = db.rawQuery("SELECT * FROM Instructor WHERE COURSE_ID=?", args);
+        Cursor c = db.rawQuery("SELECT * FROM Instructor ORDER BY INAME WHERE COURSE_ID=?", args);
 
         return c;
     }
+
     //Get Events by Course
-    public Cursor getEvents(int c_id){
+    public Cursor getEvents(int c_id) {
         //DB in read mode
         SQLiteDatabase db = helper.getReadableDatabase();
 
@@ -221,13 +228,13 @@ public class DatabaseControl {
                 "DATE, START_TIME"            //Order by date and time
         );*/
 
-        Cursor  c = db.rawQuery("SELECT * FROM Event WHERE COURSE_ID=?", args);
+        Cursor c = db.rawQuery("SELECT * FROM Event WHERE COURSE_ID=?", args);
 
         return c;
     }
+
     //Get Timetable items by Parent
-    /*
-    public Cursor getEvents(int p_id, int type){
+    public Cursor getTime(int p_id, int type) {
         //DB in read mode
         SQLiteDatabase db = helper.getReadableDatabase();
 
@@ -245,5 +252,98 @@ public class DatabaseControl {
         );
 
         return c;
-    }*/
+    }
+
+    //Update functions
+    //Update Term
+    public void updateTerm(int t_id, int y, int s, String s_d, String e_d) {
+        //Database in write mode
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String[] args = {Integer.toString(t_id)};
+
+        //Tuple to be inserted into db
+        ContentValues values = new ContentValues();
+        values.put("YEAR", y);
+        values.put("SEMESTER", s);
+        values.put("START_DATE", s_d);
+        values.put("END_DATE", e_d);
+
+        db.update("Term_Schedule", values, "WHERE TERM_ID = ?", args);
+    }
+
+    //Update course
+    public void updateCourse(int c_id, int t_i, String c, String n) {
+        //Database in write mode
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String[] args = {Integer.toString(c_id)};
+
+        //Tuple to be inserted into db
+        ContentValues values = new ContentValues();
+        values.put("TERM_ID", t_i);
+        values.put("COURSE_CODE", c);
+        values.put("CNAME", n);
+
+        //Update selected course
+        db.update("Course", values, "WHERE COURSE_ID = ?", args);
+    }
+
+    //Update Instructor (TA or Prof)
+    public void updateInstructor(int i_id, String n, int c_i, int s, String e) {
+        //Database in write mode
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String[] args = {Integer.toString(i_id)};
+
+        //Tuple to be inserted into db
+        ContentValues values = new ContentValues();
+        values.put("INAME", n);
+        values.put("COURSE_ID", c_i);
+        values.put("STATUS", s);
+        values.put("EMAIL", e);
+
+        //Update selected instructor
+        db.update("Instructor", values, "WHERE Instructor_ID = ?", args);
+    }
+
+    //Update Event (Item in Calendar)
+    public void updateEvent(int e_id, int c_i, String en, int t, int w, int g, String d, String s_t, String e_t, String n, String l) {
+        //Database in write mode
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String[] args = {Integer.toString(e_id)};
+
+        //Tuple to be inserted into db
+        ContentValues values = new ContentValues();
+        values.put("COURSE_ID", c_i);
+        values.put("ENAME", en);
+        values.put("TYPE", t);
+        values.put("WEIGHT", w);
+        values.put("GRADE", g);
+        values.put("DATE", d);
+        values.put("START_TIME", s_t);
+        values.put("END_TIME", e_t);
+        values.put("NOTE", n);
+        values.put("LOCATION", l);
+
+        //Update selected calendar item
+        db.update("Event", values, "WHERE EVENT_ID = ?", args);
+    }
+
+    //Update Timetable item
+    public void updateTime(int t_id, int p_i, int t, String l, String n, String s_t, String e_t, int d) {
+        //Database in write mode
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String[] args = {Integer.toString(t_id)};
+
+        //Tuple to be inserted into db
+        ContentValues values = new ContentValues();
+        values.put("PARENT_ID", p_i);
+        values.put("TYPE", t);
+        values.put("LOCATION", l);
+        values.put("NOTE", n);
+        values.put("START_TIME", s_t);
+        values.put("END_TIME", e_t);
+        values.put("DAY", d);
+
+        //Update selected timetable item
+        db.update("Time", values, "WHERE TIME_ID = ?", args);
+    }
 }
