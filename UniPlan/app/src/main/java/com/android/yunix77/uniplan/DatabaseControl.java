@@ -205,8 +205,7 @@ public class DatabaseControl {
                 "INAME"         //Order by name
         );*/
 
-        Cursor c = db.rawQuery("SELECT * FROM Instructor ORDER BY INAME WHERE COURSE_ID=?", args);
-
+        Cursor c = db.rawQuery("SELECT * FROM Instructor WHERE COURSE_ID=? ORDER BY INAME DESC", args);;
         return c;
     }
 
@@ -229,7 +228,6 @@ public class DatabaseControl {
         );*/
 
         Cursor c = db.rawQuery("SELECT * FROM Event WHERE COURSE_ID=?", args);
-
         return c;
     }
 
@@ -250,7 +248,6 @@ public class DatabaseControl {
                 null,           //No HAVING clause
                 "DAY, START_TIME"            //Order by date and time
         );
-
         return c;
     }
 
