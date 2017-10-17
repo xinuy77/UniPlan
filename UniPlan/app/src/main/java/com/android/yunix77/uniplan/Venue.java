@@ -49,7 +49,7 @@ public class Venue {
     public int getPincode() {
         return pincode;
     }
-
+    
     public void setPincode(int pincode) {
         this.pincode = pincode;
     }
