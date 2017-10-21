@@ -1,1 +1,36 @@
+LairuWu_DevLog Week5
 
+Finished:
+1. The nullpointer problem solved, that bug was caused because of my low version of the software.
+2. Reorganized current fragments from 4 to 3 according to the change of menu.
+3. Used new methods to make sure data can be saved in fragments instead of declare a new fragment every time.
+4. New bug: file is not executable, in the code of "content_main.xml":
+
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main"
+    tools:context="com.android.yunix77.uniplan.MainActivity">
+
+    //if I add this fragment, the file become executable
+    <fragment
+        android:name="com.android.yunix77.uniplan.homeFragment"
+        android:id="@+id/fragment_place"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout="@layout/fragment_home"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+</android.support.constraint.ConstraintLayout>
+
+//currently working on that, the menu can be usable to change fragments(pages) soon.
+
+Going to:
+Working on debugging "file exectuable"
+Start looking at the logic of database
