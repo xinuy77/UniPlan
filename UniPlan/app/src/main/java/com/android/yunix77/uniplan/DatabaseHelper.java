@@ -15,6 +15,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //context.deleteDatabase("UniPlan.db");
     }
 
+    @Override
+    public void onConfigure(SQLiteDatabase db) {
+        db.setForeignKeyConstraintsEnabled(true);
+    }
+
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS Term_Schedule ("
                 + "TERM_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
@@ -25,17 +30,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Course
         db.execSQL("CREATE TABLE IF NOT EXISTS Course("
                 + "COURSE_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
-                + "TERM_ID INT NOT NULL,"
+                + "TERM_ID INT,"
                 + "COURSE_CODE VARCHAR,"
                 + "CNAME VARCHAR"
-                + "CURRENT_GRADE INT DEFAULT 0);");
+                + "CURRENT_GRADE INT DEFAULT 0,"
+                + "FOREIGN KEY(TERM_ID) REFERENCES TERM_SCHEDULE(TERM_ID)"
+                + "ON UPDATE CASCADE ON DELETE CASCADE);");
         //Instructor (i.e. TAs and Profs)
         db.execSQL("CREATE TABLE IF NOT EXISTS Instructor("
                 + "INSTRUCTOR_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
                 + "INAME VARCHAR INT,"
                 + "COURSE_ID INT NOT NULL,"
                 + "STATUS INT NOT NULL,"
-                + "EMAIL VARCHAR);");  //Note 0 = prof, 1 = TA
+                + "EMAIL VARCHAR," +
+                " FOREIGN KEY(COURSE_ID) REFERENCES COURSE(COURSE_ID)" +
+                " ON UPDATE CASCADE ON DELETE CASCADE);");  //Note 0 = prof, 1 = TA
         //Event (i.e. items on calendar)
         db.execSQL("CREATE TABLE IF NOT EXISTS Event("
                 + "EVENT_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
@@ -48,7 +57,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "START_TIME VARCHAR,"
                 + "END_TIME VARCHAR,"
                 + "NOTE VARCHAR,"
-                + "LOCATION VARCHAR);");   //0 = test, 1 = exam, 2 = quiz, 3 = assignment, 4 = misc
+                + "LOCATION VARCHAR," +
+                " FOREIGN KEY(COURSE_ID) REFERENCES COURSE(COURSE_ID)" +
+                " ON UPDATE CASCADE ON DELETE CASCADE);");   //0 = test, 1 = exam, 2 = quiz, 3 = assignment, 4 = misc
         //Time (i.e. items on weekly timetable)
         db.execSQL("CREATE TABLE IF NOT EXISTS Time("
                 + "TIME_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"

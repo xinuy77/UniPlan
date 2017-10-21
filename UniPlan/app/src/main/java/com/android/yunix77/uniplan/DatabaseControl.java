@@ -343,4 +343,84 @@ public class DatabaseControl {
         //Update selected timetable item
         db.update("Time", values, "WHERE TIME_ID = ?", args);
     }
+
+    public String deleteTerm(int t_id) {
+        SQLiteDatabase db  = helper.getWritableDatabase();
+        String[] args      = {Integer.toString(t_id)};
+        String query       = "DELETE FROM TERM_SCHEDULE WHERE TERM_ID=?";
+        try{
+            db.rawQuery(query,args).moveToFirst();
+            return "Term Deleted Successfully";
+        }catch (Exception e){
+            e.printStackTrace();
+            return e.toString();
+        }
+    }
+
+    public String deleteCourse(int c_id) {
+        SQLiteDatabase db  = helper.getWritableDatabase();
+        String[] args      = {Integer.toString(c_id)};
+        String query       = "DELETE FROM COURSE WHERE COURSE_ID=?";
+        try{
+            db.rawQuery(query,args).moveToFirst();
+            return "Course Deleted Successfully";
+        }catch (Exception e){
+            e.printStackTrace();
+            return e.toString();
+        }
+    }
+
+    public String deleteInstructor(int i_id) {
+        SQLiteDatabase db  = helper.getWritableDatabase();
+        String[] args      = {Integer.toString(i_id)};
+        String query       = "DELETE FROM INSTRUCTOR WHERE INSTRUCTOR_ID=?";
+        try{
+            db.rawQuery(query,args).moveToFirst();
+            return "Instructor Deleted Successfully";
+        }catch (Exception e){
+            e.printStackTrace();
+            return e.toString();
+        }
+    }
+
+    public String deleteEvent(int e_id) {
+        SQLiteDatabase db  = helper.getWritableDatabase();
+        String[] args      = {Integer.toString(e_id)};
+        String query       = "DELETE FROM EVENT WHERE EVENT_ID=?";
+        try{
+            db.rawQuery(query,args).moveToFirst();
+            return "Event Deleted Successfully";
+        }catch (Exception e){
+            e.printStackTrace();
+            return e.toString();
+        }
+    }
+
+    public String deleteTime(int t_id) {
+        SQLiteDatabase db  = helper.getWritableDatabase();
+        String[] args      = {Integer.toString(t_id)};
+        String query       = "DELETE FROM TIME WHERE TIME_ID=?";
+        try{
+            db.rawQuery(query,args).moveToFirst();
+            return "Time Deleted Successfully";
+        }catch (Exception e){
+            e.printStackTrace();
+            return e.toString();
+        }
+    }
+
+    public String deleteAll() {
+        SQLiteDatabase db  = helper.getWritableDatabase();
+        try {
+            db.delete("TERM_SCHEDULE", null, null);
+            db.delete("COURSE", null, null);
+            db.delete("INSTRUCTOR", null, null);
+            db.delete("EVENT", null, null);
+            db.delete("TIME", null, null);
+            return "All entries Deleted Successfully";
+        }catch (Exception e) {
+            e.printStackTrace();
+            return e.toString();
+        }
+    }
 }

@@ -13,6 +13,7 @@ public class DatabaseTester {
         this.control          = control;
         res                   = testAdd(res);
         res                   = testGet(res);
+        res                   = testDelete(res);
 
         printLog(res);
     }
@@ -25,7 +26,7 @@ public class DatabaseTester {
         res.add("Testing addCourse...");
         res.add("================START===============");
         res.add(control.addCourse(1, "DB123", "TEST COURSE"));
-        res.add(control.addCourse(2, "DB123", "TEST COURSE"));
+        //res.add(control.addCourse(2, "DB123", "TEST COURSE"));
         res.add("================END=================");
         res.add("Testing addInstructor...");
         res.add("================START===============");
@@ -63,6 +64,18 @@ public class DatabaseTester {
         return res;
     }
 
+    private ArrayList<String> testDelete(ArrayList<String> res) {
+        res.add("Testing deleteTerm...");
+        res.add("================START===============");
+        res.add(control.deleteTerm(1));
+        res.add("================END=================");
+        res.add("Testing deleteAll...");
+        res.add("================START===============");
+        res.add(control.deleteAll());
+        res.add("================END=================");
+        return res;
+    }
+
     private ArrayList<String> cursorToArr(Cursor cursor, ArrayList<String> res) {
         if (cursor != null) {
             int startPosition = cursor.getPosition();
@@ -74,8 +87,8 @@ public class DatabaseTester {
                     String value;
                     try {
                         value = cursor.getString(i);
-                    } catch (SQLiteException e) {
-                        value = "<unprintable>";
+                    } catch (Exception e) {
+                        value = "<unprintable>: " + e.toString();
                     }
                     res.add(columnNames[i] + " : " + value);
                 }
