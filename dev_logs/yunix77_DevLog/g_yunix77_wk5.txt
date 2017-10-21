@@ -1,0 +1,7 @@
+Goals for week 5:
+	- complete required DB control functions
+Achievement:
+ 	- Added test codes for DB control functions
+	- Added DB Delete control functions
+Goals for week 6:
+	- Start working on required UI's and relevant functions
