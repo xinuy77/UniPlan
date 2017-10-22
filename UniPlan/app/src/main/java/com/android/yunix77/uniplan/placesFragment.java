@@ -65,7 +65,9 @@ public class placesFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_places, container, false);
 
-        progressDialog = ProgressDialog.show(getActivity(), "", "Loading...");
+        //progressDialog = ProgressDialog.show(getActivity(), "", "Loading...");
+        //If change page into place fragment, the program loops in "loading"
+        //comment to skip this line till new implements
 
         return view;
     }
