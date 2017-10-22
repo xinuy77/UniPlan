@@ -119,7 +119,7 @@ public class eventFragment extends Fragment {
     public void onResume() {
         super.onResume();
         appTitleInterface.onSetTitle("Events");
-        ((MainActivity)context).setTitle("Events");
+        //((MainActivity)context).setTitle("Events");
     }
 
     @Override
