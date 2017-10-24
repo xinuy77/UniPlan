@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
         appTitleInterface{
 
     private DatabaseControl dbControl;
-    private DatabaseTester test;
+    private DatabaseTester  test;
                 
     protected Fragment eventFragment;
     protected Fragment homeFragment;
@@ -35,12 +35,12 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        eventFragment   = new eventFragment();
-        homeFragment    = new homeFragment();
-        placesFragment  = new placesFragment();
-            
-        dbControl = new DatabaseControl(getApplicationContext());
-        test      = new DatabaseTester(dbControl);
+        eventFragment  = new eventFragment();
+        homeFragment   = new homeFragment();
+        placesFragment = new placesFragment();
+        dbControl      = new DatabaseControl(getApplicationContext());
+        test           = new DatabaseTester(dbControl);
+
         initUI();
     }
                 

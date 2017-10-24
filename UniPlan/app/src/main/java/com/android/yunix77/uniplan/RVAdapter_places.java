@@ -11,25 +11,26 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 public class RVAdapter_places extends RecyclerView.Adapter<RVAdapter_places.ViewHolder> {
-    private Listener listener;
-    JSONArray jsonArray;
+    private Listener  listener;
+            JSONArray jsonArray;
+
+    public RVAdapter_places(JSONArray jsonArray){
+        this.jsonArray = jsonArray;
+    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private CardView cardView;
+
         public ViewHolder(CardView view){
             super(view);
             cardView = view;
         }
     }
 
-    public RVAdapter_places(JSONArray jsonArray){
-        this.jsonArray = jsonArray;
-    }
-
     @Override
     public RVAdapter_places.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        CardView cv;
-        cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_single_textview,parent,false);
+        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_single_textview,parent,false);
+
         return new ViewHolder(cv);
     }
 
@@ -46,7 +47,7 @@ public class RVAdapter_places extends RecyclerView.Adapter<RVAdapter_places.View
     private void createPlacesCard(ViewHolder holder, final int position){
         //setup view
         CardView cardView = holder.cardView;
-        TextView places = (TextView)cardView.findViewById(R.id.card_single_textview);
+        TextView places   = (TextView)cardView.findViewById(R.id.card_single_textview);
         try {
             places.setText(jsonArray.get(position).toString());
         } catch (JSONException e) {

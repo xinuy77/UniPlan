@@ -35,22 +35,26 @@ import com.android.yunix77.uniplan.EventData;
  * A simple {@link Fragment} subclass.
  */
 public class eventFragment extends Fragment {
-    static int FILTER;
-    final static int PLACES_FILTER = 1;
-    final static int NO_FILTER = 0;
+    static int       FILTER;
+    final static int PLACES_FILTER   = 1;
+    final static int NO_FILTER       = 0;
     final static int COLLEGES_FILTER = 2;
-    View view;
+
+    View                view;
     LinearLayoutManager layout;
-    RecyclerView rv;
-    RVAdapter_events rvAdapterEvents;
-    Reader reader;
+    RecyclerView        rv;
+    RVAdapter_events    rvAdapterEvents;
+    Reader              reader;
+
     Gson gson = new Gson();
+
     private ProgressDialog progressDialog;
-    private String data;
+    private String         data;
+
     SwipeRefreshLayout swipeRefreshLayout;
-    Bundle config;
-    Context context;
-    appTitleInterface appTitleInterface;
+    Bundle             config;
+    Context            context;
+    appTitleInterface  appTitleInterface;
 
     static List<EventData> eventDataList;
 
@@ -65,18 +69,21 @@ public class eventFragment extends Fragment {
 
     public static eventFragment newInstance(int filter, String data){
         eventFragment ef = new eventFragment();
-        Bundle config = new Bundle();
+        Bundle config    = new Bundle();
+
         config.putInt("filter", filter);
         config.putString("data", data);
         ef.setArguments(config);
+
         return ef;
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.context = context;
+        this.context            = context;
         final Activity activity = getActivity();
+
         if (activity instanceof appTitleInterface) {
             appTitleInterface = (appTitleInterface) activity;
         } else {
@@ -87,9 +94,9 @@ public class eventFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         eventDataList = new ArrayList<EventData>();
-        config = getArguments();
+        config        = getArguments();
+
         if(config!=null){
             data = config.getString("data");
             FILTER = config.getInt("filter");
@@ -99,7 +106,6 @@ public class eventFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         view = inflater.inflate(R.layout.fragment_event,container,false);
 
         setUpSwipRefershView();
@@ -156,14 +162,17 @@ public class eventFragment extends Fragment {
     }
 
     private void setUpView() {
-        rv = (RecyclerView) view.findViewById(R.id.recyclerView);
-        rv.setHasFixedSize(true);
-        rvAdapterEvents = new RVAdapter_events(eventDataList);
-        rv.setAdapter(rvAdapterEvents);
-        layout = new LinearLayoutManager(context);
-        rv.setLayoutManager(layout);
+        rv                                     = (RecyclerView) view.findViewById(R.id.recyclerView);
+        rvAdapterEvents                        = new RVAdapter_events(eventDataList);
+        layout                                 = new LinearLayoutManager(context);
         RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
+
+        rv.setHasFixedSize(true);
+        rv.setAdapter(rvAdapterEvents);
+        rv.setLayoutManager(layout);
+
         itemAnimator.setChangeDuration(500);
+
         rv.setItemAnimator(itemAnimator);
     }
 

@@ -37,18 +37,24 @@ public class EventDetailsActivity extends AppCompatActivity {
 
 
         ButterKnife.bind(this);
+
         Bundle extras = getIntent().getExtras();
-        data = new Gson().fromJson(extras.getString("data"), EventData.class);
+               data   = new Gson().fromJson(extras.getString("data"), EventData.class);
+
         getSupportActionBar().setTitle(data.getEventName());
         eventNameTxt.setText(data.getEventName());
         collegeTxt.setText(data.getCollege());
+
         if(Integer.parseInt(data.getFee())==0){
             fee_layout.removeAllViews();
         }else{
             feeTxt.setText(data.getFee());
         }
+
         detailsTxt.setText(data.getDetails());
+
         String venue = data.getVenue().getStreetAddr() + ", " + data.getVenue().getArea() + ", " + data.getVenue().getCity() + ", " + data.getVenue().getState() + "\n" + data.getVenue().getPincode();
+
         venueTxt.setText(venue);
     }
 
