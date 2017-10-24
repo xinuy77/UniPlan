@@ -68,7 +68,7 @@ public class homeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        appTitleInterface.onSetTitle("V Group");
+        appTitleInterface.onSetTitle("Home");
     }
 
     @Override
