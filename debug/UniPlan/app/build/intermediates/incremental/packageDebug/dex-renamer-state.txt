@@ -1,0 +1,7 @@
+#Tue Oct 17 17:31:00 EDT 2017
+base.0=C\:\\Users\\xion\\Mobile-App-Project\\debug\\UniPlan\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bbeaa2099e1e6f9e9727d8d730210fe78a0f9317
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\xion\\Mobile-App-Project\\debug\\UniPlan\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c43306e94dc27b5968cbd137d13b70de52869d37\\classes.dex
+base.1=C\:\\Users\\xion\\Mobile-App-Project\\debug\\UniPlan\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c43306e94dc27b5968cbd137d13b70de52869d37
+file.0=C\:\\Users\\xion\\Mobile-App-Project\\debug\\UniPlan\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bbeaa2099e1e6f9e9727d8d730210fe78a0f9317\\classes.dex
