@@ -347,7 +347,7 @@ public class DatabaseControl {
     public String deleteTerm(int t_id) {
         SQLiteDatabase db  = helper.getWritableDatabase();
         String[] args      = {Integer.toString(t_id)};
-        String query       = "DELETE FROM TERM_SCHEDULE WHERE TERM_ID=?";
+        String query       = "DELETE FROM TERM_SCHEDULE WHERE _id=?";
         try{
             db.rawQuery(query,args).moveToFirst();
             return "Term Deleted Successfully";
@@ -360,7 +360,7 @@ public class DatabaseControl {
     public String deleteCourse(int c_id) {
         SQLiteDatabase db  = helper.getWritableDatabase();
         String[] args      = {Integer.toString(c_id)};
-        String query       = "DELETE FROM COURSE WHERE COURSE_ID=?";
+        String query       = "DELETE FROM COURSE WHERE _id=?";
         try{
             db.rawQuery(query,args).moveToFirst();
             return "Course Deleted Successfully";
@@ -373,7 +373,7 @@ public class DatabaseControl {
     public String deleteInstructor(int i_id) {
         SQLiteDatabase db  = helper.getWritableDatabase();
         String[] args      = {Integer.toString(i_id)};
-        String query       = "DELETE FROM INSTRUCTOR WHERE INSTRUCTOR_ID=?";
+        String query       = "DELETE FROM INSTRUCTOR WHERE _id=?";
         try{
             db.rawQuery(query,args).moveToFirst();
             return "Instructor Deleted Successfully";
@@ -386,7 +386,7 @@ public class DatabaseControl {
     public String deleteEvent(int e_id) {
         SQLiteDatabase db  = helper.getWritableDatabase();
         String[] args      = {Integer.toString(e_id)};
-        String query       = "DELETE FROM EVENT WHERE EVENT_ID=?";
+        String query       = "DELETE FROM EVENT WHERE _id=?";
         try{
             db.rawQuery(query,args).moveToFirst();
             return "Event Deleted Successfully";
@@ -399,7 +399,7 @@ public class DatabaseControl {
     public String deleteTime(int t_id) {
         SQLiteDatabase db  = helper.getWritableDatabase();
         String[] args      = {Integer.toString(t_id)};
-        String query       = "DELETE FROM TIME WHERE TIME_ID=?";
+        String query       = "DELETE FROM TIME WHERE _id=?";
         try{
             db.rawQuery(query,args).moveToFirst();
             return "Time Deleted Successfully";

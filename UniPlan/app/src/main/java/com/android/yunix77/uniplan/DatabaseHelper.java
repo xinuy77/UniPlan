@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "UniPlan.db";
 
     //Create database and tables if they do not exist already
@@ -22,32 +22,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS Term_Schedule ("
-                + "TERM_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
                 + "YEAR INT,"
                 + "SEMESTER INT,"
                 + "START_DATE VARCHAR,"
                 + "END_DATE VARCHAR);");
         //Course
         db.execSQL("CREATE TABLE IF NOT EXISTS Course("
-                + "COURSE_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
                 + "TERM_ID INT,"
                 + "COURSE_CODE VARCHAR,"
                 + "CNAME VARCHAR"
                 + "CURRENT_GRADE INT DEFAULT 0,"
-                + "FOREIGN KEY(TERM_ID) REFERENCES TERM_SCHEDULE(TERM_ID)"
+                + "FOREIGN KEY(TERM_ID) REFERENCES TERM_SCHEDULE(_ID)"
                 + "ON UPDATE CASCADE ON DELETE CASCADE);");
         //Instructor (i.e. TAs and Profs)
         db.execSQL("CREATE TABLE IF NOT EXISTS Instructor("
-                + "INSTRUCTOR_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
                 + "INAME VARCHAR INT,"
                 + "COURSE_ID INT NOT NULL,"
                 + "STATUS INT NOT NULL,"
                 + "EMAIL VARCHAR," +
-                " FOREIGN KEY(COURSE_ID) REFERENCES COURSE(COURSE_ID)" +
+                " FOREIGN KEY(COURSE_ID) REFERENCES COURSE(_ID)" +
                 " ON UPDATE CASCADE ON DELETE CASCADE);");  //Note 0 = prof, 1 = TA
         //Event (i.e. items on calendar)
         db.execSQL("CREATE TABLE IF NOT EXISTS Event("
-                + "EVENT_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
                 + "COURSE_ID INT NOT NULL,"
                 + "ENAME VARCHAR NOT NULL,"
                 + "TYPE INT NOT NULL,"
@@ -58,11 +58,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "END_TIME VARCHAR,"
                 + "NOTE VARCHAR,"
                 + "LOCATION VARCHAR," +
-                " FOREIGN KEY(COURSE_ID) REFERENCES COURSE(COURSE_ID)" +
+                " FOREIGN KEY(COURSE_ID) REFERENCES COURSE(_ID)" +
                 " ON UPDATE CASCADE ON DELETE CASCADE);");   //0 = test, 1 = exam, 2 = quiz, 3 = assignment, 4 = misc
         //Time (i.e. items on weekly timetable)
         db.execSQL("CREATE TABLE IF NOT EXISTS Time("
-                + "TIME_ID INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0,"
                 + "PARENT_ID INT NOT NULL,"
                 + "TYPE INT NOT NULL,"
                 + "LOCATION VARCHAR,"
@@ -73,7 +73,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     //If database is reconfigured, erase data in table
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("");
+        db.execSQL("DROP TABLE IF EXISTS TERM_SCHEDULE");
+        db.execSQL("DROP TABLE IF EXISTS COURSE");
+        db.execSQL("DROP TABLE IF EXISTS INSTRUCTOR");
+        db.execSQL("DROP TABLE IF EXISTS EVENT");
+        db.execSQL("DROP TABLE IF EXISTS TIME");
         onCreate(db);
     }
 }
