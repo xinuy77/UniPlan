@@ -1,13 +1,8 @@
-package com.android.yunix77.uniplan;
+package com.uniplan.uniplan_alt;
 
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,79 +12,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener ,
-        appTitleInterface{
-
-    private DatabaseControl dbControl;
-    private DatabaseTester test;
-                
-    protected Fragment outlineFragment;
-    protected Fragment calendarFragment;
-    protected Fragment timetableFragment;
-    protected Fragment gradesFragment;
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        outlineFragment    = new OutlineFragment();
-        calendarFragment   = new CalendarFragment();
-        timetableFragment  = new TimetableFragment();
-        gradesFragment     = new GradesFragment();
-            
-        dbControl = new DatabaseControl(getApplicationContext());
-        test      = new DatabaseTester(dbControl);
-        initUI();
-    }
-                
-    public void changeFragment(int id){
-        Fragment currentFragment = null;
-        if(id==R.id.nav_outline){
-            currentFragment = outlineFragment;
-        }
-        else if(id==R.id.nav_calendar){
-            currentFragment = calendarFragment;
-        }
-        else if(id==R.id.nav_timetable){
-            currentFragment = timetableFragment;
-        }
-        else if(id==R.id.nav_grades){
-            currentFragment = gradesFragment;
-        }
-        if(currentFragment != null){
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.include, currentFragment);
-            ft.addToBackStack(null); //default is the previous one
-            ft.commit();
-        }
-        DrawerLayout drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-    }
-
-    public void initUI() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
+        drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-            
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.include, outlineFragment);
-        ft.commit();
-
-        changeFragment(R.id.nav_outline);
     }
 
     @Override
@@ -130,15 +80,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        changeFragment(id);
-            
+        if (id == R.id.nav_outline) {
+            // Handle the camera action
+        } else if (id == R.id.nav_calendar) {
+
+        } else if (id == R.id.nav_timetable) {
+
+        } else if (id == R.id.nav_grades) {
+
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-    
-    @Override
-    public void onSetTitle(String title) {
-        setTitle(title);
     }
 }

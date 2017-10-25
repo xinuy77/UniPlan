@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text = "Add a Term"
+        android:textSize="40sp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="SELECT START DATE"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"
+        android:textSize="20sp"/>
+    <DatePicker
+        android:id = "@+id/setTermStart"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text = "SET START DATE"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_weight="0.24" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="SELECT END DATE"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"
+        android:textSize="20sp"/>
+    <DatePicker
+        android:id = "@+id/setTermEnd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text = "SET START DATE"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_weight="0.24" />
+
+    <Button
+        android:id = "@+id/submitTerm"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="#000"
+        android:layout_gravity="center"
+        android:textColor="#fff"
+        android:text="SUBMIT"
+        android:textSize="20sp"/>
+</LinearLayout>
