@@ -1,0 +1,6 @@
+Week 4 Dev Log:
+	Work completed: 
+		Still working on event calender (stuck)
+
+	Duties for next week:
+		Try to finish event calender, need to produce supporting functions before implementing
