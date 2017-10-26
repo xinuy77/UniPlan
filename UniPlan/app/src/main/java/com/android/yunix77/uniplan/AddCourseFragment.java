@@ -14,8 +14,6 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import android.util.Log;
 
-import static android.R.attr.id;
-
 public class AddCourseFragment extends Fragment {
     DatabaseControl   db;
     View              view;
@@ -53,8 +51,6 @@ public class AddCourseFragment extends Fragment {
         int    c_id;
         String result = db.addCourse(t_id, input.get(1), input.get(0));
         cursor        = db.getLatestCourse();
-
-        Log.i("DEBUG", "res: "+result);
 
         cursor.moveToFirst();
         try {
