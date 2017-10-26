@@ -1,7 +1,6 @@
 package com.android.yunix77.uniplan;
 
 import android.database.Cursor;
-import android.database.CursorIndexOutOfBoundsException;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -39,7 +38,6 @@ public class CourseFragment extends Fragment {
         term_id    = new ArrayList<Integer>();
 
         fillTerm(term);
-        Log.i("DEBUG", ""+ term.getSelectedItemPosition());
         fillCard();
         setAddCourseButton();
 
