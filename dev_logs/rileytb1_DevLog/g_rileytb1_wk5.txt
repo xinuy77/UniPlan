@@ -1,0 +1,13 @@
+Goals for week 5:
+  Finish control class constructor
+  Begin (and ideally complete) coding for get/set methods of control class
+Accomplishments:
+  Completed class constructor
+  Completed all add/update/get methods for database control methods
+Goals for week 6:
+  Complete Outline component of UI, allowing user to view and input school info.
+  Assist in creating Calendar component of UI if necessary
+  Assist in write-up of Deliverable 2.
+Note:
+  DevLog added late, although plans were discussed during group meeting of 17-10-2017.
+  

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
         appTitleInterface{
 
     private DatabaseControl dbControl;
-    private DatabaseTester test;
+    private DatabaseTester  test;
                 
     protected Fragment outlineFragment;
     protected Fragment calendarFragment;

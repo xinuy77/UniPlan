@@ -12,8 +12,12 @@ import java.util.List;
 import com.android.yunix77.uniplan.EventData;
 
 public class RVAdapter_home extends RecyclerView.Adapter<RVAdapter_home.ViewHolder> {
-    private Listener listener;
+    private Listener        listener;
     private List<EventData> eventDataList;
+
+    public RVAdapter_home(List<EventData> list){
+        eventDataList = list;
+    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private CardView cardView;
@@ -21,10 +25,6 @@ public class RVAdapter_home extends RecyclerView.Adapter<RVAdapter_home.ViewHold
             super(view);
             cardView = view;
         }
-    }
-
-    public RVAdapter_home(List<EventData> list){
-        eventDataList = list;
     }
 
     @Override
@@ -47,17 +47,24 @@ public class RVAdapter_home extends RecyclerView.Adapter<RVAdapter_home.ViewHold
     private void createEventsCard(ViewHolder holder, final int position){
         //setup view
         CardView cardView = holder.cardView;
-        TextView eventName,college,fee,details,coordInfo,venue;
+        TextView eventName, college, fee, details , coordInfo, venue;
+
         eventName = (TextView)cardView.findViewById(R.id.card_event_name);
-        fee = (TextView)cardView.findViewById(R.id.card_event_fee);
-        details = (TextView)cardView.findViewById(R.id.card_event_details);
+        fee       = (TextView)cardView.findViewById(R.id.card_event_fee);
+        details   = (TextView)cardView.findViewById(R.id.card_event_details);
         coordInfo = (TextView)cardView.findViewById(R.id.card_event_coordInfo);
-        venue = (TextView)cardView.findViewById(R.id.card_event_venue);
+        venue     = (TextView)cardView.findViewById(R.id.card_event_venue);
+
         eventName.setText(eventDataList.get(position).getEventName());
+
         fee.setText(eventDataList.get(position).getFee());
+
         details.setText(eventDataList.get(position).getDetails());
+
         //coordInfo.setText(eventDataList.get(position).getCoordinatorInfo());
+
         venue.setText(eventDataList.get(position).getVenue().getArea());
+
         cardView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

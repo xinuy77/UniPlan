@@ -26,14 +26,15 @@ import com.android.yunix77.uniplan.EventData;
  */
 public class homeFragment extends Fragment {
 
-    View view;
-    List<EventData> recentEvents;
+    View                       view;
+    List<EventData>            recentEvents;
     StaggeredGridLayoutManager layout;
-    RecyclerView rv;
-    RVAdapter_home rvAdapterHome;
-    private ProgressDialog progressDialog;
-    Context context;
-    appTitleInterface appTitleInterface;
+    RecyclerView               rv;
+    RVAdapter_home             rvAdapterHome;
+    Context                    context;
+    appTitleInterface          appTitleInterface;
+
+    private ProgressDialog     progressDialog;
 
     public homeFragment() {
         // Required empty public constructor
@@ -46,8 +47,10 @@ public class homeFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.context = context;
+
+        this.context            = context;
         final Activity activity = getActivity();
+
         if (activity instanceof appTitleInterface) {
             appTitleInterface = (appTitleInterface) activity;
         } else {
@@ -59,14 +62,13 @@ public class homeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
-
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        appTitleInterface.onSetTitle("V Group");
+        appTitleInterface.onSetTitle("Home");
     }
 
     @Override
@@ -76,18 +78,24 @@ public class homeFragment extends Fragment {
     }
 
     private void setUpRecyclerView() {
-        rv = (RecyclerView) view.findViewById(R.id.home_recyclerView);
-        rv.setHasFixedSize(true);
+        rv            = (RecyclerView) view.findViewById(R.id.home_recyclerView);
         rvAdapterHome = new RVAdapter_home(recentEvents);
+
+        rv.setHasFixedSize(true);
+
         rvAdapterHome.setListener(new RVAdapter_home.Listener() {
             @Override
             public void onClick(EventData data) {
                 Intent intent = new Intent(getActivity(),EventDetailsActivity.class);
+
                 getActivity().startActivity(intent);
             }
         });
+
         rv.setAdapter(rvAdapterHome);
+
         layout = new StaggeredGridLayoutManager(2, 1);
+
         rv.setLayoutManager(layout);
     }
 
