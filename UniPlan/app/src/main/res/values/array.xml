@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="eventtypes">
+        <item>TEST</item>
+        <item>EXAM</item>
+        <item>QUIZ</item>
+        <item>ASSIGNMENT</item>
+        <item>MISC.</item>
+    </string-array>
+</resources>

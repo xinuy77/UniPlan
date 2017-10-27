@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -86,6 +87,10 @@ public class AddTermFragment extends Fragment {
                     //Return to previous page
                     FragmentManager fm = getActivity().getSupportFragmentManager();
                     fm.popBackStack();
+                }
+                else{
+                    Toast toast = Toast.makeText(getActivity(),"Start Date must come before End Date", Toast.LENGTH_LONG);
+                    toast.show();
                 }
             }
         });

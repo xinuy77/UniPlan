@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Ra\\Mobile-App-Project\\UniPlan_Alt\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Ra\\.android\\build-cache\\9a3e33980391e0befe24a139f34a60f767ebd738\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ra\\Mobile-App-Project\\UniPlan_Alt\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\Ra\\.android\\build-cache\\9a3e33980391e0befe24a139f34a60f767ebd738\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ra\\Mobile-App-Project\\UniPlan_Alt\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\Ra\\.android\\build-cache\\9a3e33980391e0befe24a139f34a60f767ebd738\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ra\\Mobile-App-Project\\UniPlan_Alt\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Ra\\.android\\build-cache\\9a3e33980391e0befe24a139f34a60f767ebd738\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    }
+]

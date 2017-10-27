@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text = "Add an Event"
+        android:textSize="40sp"
+        android:gravity="center"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+            <EditText
+                android:id="@+id/addename"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="Name" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="168dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Type: "
+                android:textSize="20sp"
+                android:weight="0" />
+
+            <Spinner
+                android:id="@+id/addeventtype"
+                android:layout_width="200sp"
+                android:layout_height="38sp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#00ffff"
+                android:entries="@array/eventtypes"
+                android:prompt="Type"
+                android:spinnerMode="dialog"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <EditText
+                android:id="@+id/addeventweight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="Weight (0-100% of Total Course Grade)"
+                android:inputType="number" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+            <EditText
+                android:id="@+id/addeventgrade"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="Grade (0-100%, leave blank if not yet graded)"
+                android:inputType="number" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="SELECT DATE"
+                android:gravity="center"
+                android:background="@color/colorAccent"
+                android:textColor="#FFF"
+                android:textSize="20sp"/>
+            <DatePicker
+                android:id = "@+id/addeventdate"
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:text = "SET START DATE"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="SELECT START TIME"
+                android:gravity="center"
+                android:background="@color/colorAccent"
+                android:textColor="#FFF"
+                android:textSize="20sp"/>
+            <TimePicker
+                android:id = "@+id/addeventstarttime"
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:text = "SET START DATE"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="SELECT END TIME"
+                android:gravity="center"
+                android:background="@color/colorAccent"
+                android:textColor="#FFF"
+                android:textSize="20sp"/>
+            <TimePicker
+                android:id = "@+id/addeventendtime"
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:text = "SET START DATE"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <EditText
+                android:id="@+id/addeventlocation"
+                android:gravity="center"
+                android:hint="Location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+            <EditText
+                android:id="@+id/addeventnotes"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:hint="Notes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="200"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+            <Button
+                android:id = "@+id/submitEvent"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="#000"
+                android:layout_gravity="center"
+                android:textColor="#fff"
+                android:text="SUBMIT"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -97,23 +97,28 @@
     <android.support.v4.widget.Space
         android:layout_width="wrap_content"
         android:layout_height="15sp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Attending" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Attending"
-            android:layout_weight="1"/>
+            android:text="Maybe I'll Go" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Maybe I'll Go"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Not Interested"/>
+            android:text="Not Interested" />
     </LinearLayout>
 
 </LinearLayout>

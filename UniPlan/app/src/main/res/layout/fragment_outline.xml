@@ -2,15 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <TextView
+        android:text="School Terms"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"
+        android:textSize="20sp"/>
+    <ListView
+        android:id="@+id/termlist"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+    </ListView>
+
     <Button
         android:id="@+id/addterm"
         android:text = "Add New School Term"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
-    <ListView
-        android:id="@+id/termlist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
 
 </LinearLayout>

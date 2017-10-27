@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity
     protected Fragment calendarFragment;
     protected Fragment timetableFragment;
     protected Fragment gradesFragment;
+    protected Fragment courseFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         calendarFragment   = new CalendarFragment();
         timetableFragment  = new TimetableFragment();
         gradesFragment     = new GradesFragment();
+        courseFragment     = new CourseFragment();
             
         dbControl = new DatabaseControl(getApplicationContext());
         test      = new DatabaseTester(dbControl);
@@ -48,8 +50,12 @@ public class MainActivity extends AppCompatActivity
                 
     public void changeFragment(int id){
         Fragment currentFragment = null;
+
         if(id==R.id.nav_outline){
             currentFragment = outlineFragment;
+        }
+        else if(id==R.id.nav_course){
+            currentFragment = courseFragment;
         }
         else if(id==R.id.nav_calendar){
             currentFragment = calendarFragment;
@@ -60,6 +66,7 @@ public class MainActivity extends AppCompatActivity
         else if(id==R.id.nav_grades){
             currentFragment = gradesFragment;
         }
+
         if(currentFragment != null){
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -67,6 +74,7 @@ public class MainActivity extends AppCompatActivity
             ft.addToBackStack(null); //default is the previous one
             ft.commit();
         }
+
         DrawerLayout drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }

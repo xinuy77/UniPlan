@@ -5,4 +5,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="eventtype0">TEST</string>
+    <string name="eventtype1">EXAM</string>
+    <string name="eventtype2">QUIZ</string>
+    <string name="eventtype3">ASSIGNMENT</string>
+    <string name="eventtype4">MISC.</string>
 </resources>

@@ -187,6 +187,13 @@ public class DatabaseControl {
         return c;
     }
 
+    public Cursor getLatestCourse() {
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c          = db.rawQuery("SELECT * FROM Course ORDER BY _ID DESC LIMIT 1", null);
+
+        return c;
+    }
+
     //Get Instructors by Course
     public Cursor getInstructors(int c_id) {
         //DB in read mode

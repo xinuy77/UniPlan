@@ -32,6 +32,7 @@ public class OutlineFragment extends Fragment {
     //Fragment layout (UI)
     View myView;
     //Fragment UI components
+
     Button addTerm;
     ListView termList;
     //Database
@@ -60,7 +61,7 @@ public class OutlineFragment extends Fragment {
 
         //Populate List
         final Cursor cursor = db.getTerms();
-        ArrayList<String> termStrArr = new ArrayList<String>();
+        final ArrayList<String> termStrArr = new ArrayList<String>();
         ArrayAdapter myAdapter;
 
         int startCol = cursor.getColumnIndex("START_DATE");
@@ -77,9 +78,7 @@ public class OutlineFragment extends Fragment {
         termList = (ListView) myView.findViewById(R.id.termlist);
         termList.setAdapter(myAdapter);
 
-        //Onclick, pull up list of courses with selected term as parent.
-        //Currently commented out until CoursesFragment is implemented
-        /*
+        //Onclick, pull up ViewTerm with selected term as parent.
         termList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View clickView,
                                     int position, long id) {
@@ -91,16 +90,16 @@ public class OutlineFragment extends Fragment {
                 //Bundle ID as argument to new fragment
                 Bundle bundle = new Bundle(); //Create argument bundle
                 bundle.putInt("TERM_ID", term_id); //Add term id to bundle
-                CoursesFragment courses = new CoursesFragment(); //Create new Courses fragment (to be implemented)
-                courses.setArguments(bundle); //Attach arguments to fragment
+                bundle.putString("TERM_TITLE", "Term: " + termStrArr.get(position));
+                ViewTermFragment term = new ViewTermFragment(); //Create new Courses fragment (to be implemented)
+                term.setArguments(bundle); //Attach arguments to fragment
 
                 final FragmentTransaction trans = getFragmentManager().beginTransaction();
-                trans.replace(R.id.include, courses);
+                trans.replace(R.id.include, term);
                 trans.addToBackStack(null);
                 trans.commit();
             }
         });
-        */
 
         return myView;
     }
