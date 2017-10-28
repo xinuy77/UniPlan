@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EventDetailsActivity"
+            android:name=".Fragments_Discontinued.EventDetailsActivity"
             android:parentActivityName=".MainActivity" />
     </application>
 

@@ -62,17 +62,33 @@ public class AddTermFragment extends Fragment {
                 //If dates are valid (i.e. star date < end date)
                 //  add term to DB and return to Term List
                 if (sdate.before(edate)){
+                    String sdString;
+                    if (sd <= 10){sdString = "0" + Integer.toString(sd);}
+                    else{sdString = Integer.toString(sd);}
+
+                    String smString;
+                    if (sm <= 10){smString = "0" + Integer.toString(sm);}
+                    else{smString = Integer.toString(sm);}
+
+                    String edString;
+                    if (ed <= 10){edString = "0" + Integer.toString(ed);}
+                    else{edString = Integer.toString(ed);}
+
+                    String emString;
+                    if (em <= 10){emString = "0" + Integer.toString(em);}
+                    else{emString = Integer.toString(em);}
+
                     //Formate dates as "YYYY-MM-DD" strings
                     String sdateString = Integer.toString(sy)
                             + "-"
-                            + Integer.toString(sm)
+                            + smString
                             + "-"
-                            + Integer.toString(sd);
+                            + sdString;
                     String edateString = Integer.toString(ey)
                             + "-"
-                            + Integer.toString(em)
+                            + emString
                             + "-"
-                            + Integer.toString(ed);
+                            + edString;
                     //Determine semester
                     int sem;
                     if ((9 <= sm) && (sm <= 12)){

@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.yunix77.uniplan.EventDetailsActivity;
 import com.android.yunix77.uniplan.R;
 import com.android.yunix77.uniplan.appTitleInterface;
 

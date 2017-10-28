@@ -102,11 +102,21 @@ public class AddEventFragment extends Fragment {
                 day = addEventDate.getDayOfMonth();
                 month = addEventDate.getMonth();
                 year = addEventDate.getYear();
-                date = Integer.toString(year)
+
+                String dayString;
+                if (day <= 10){dayString = "0" + Integer.toString(day);}
+                else{dayString = Integer.toString(day);}
+
+                String monthString;
+                if (month <= 10){monthString = "0" + Integer.toString(month);}
+                else{monthString = Integer.toString(month);}
+
+                //Formate dates as "YYYY-MM-DD" strings
+                String date = Integer.toString(year)
                         + "-"
-                        + Integer.toString(day)
+                        + monthString
                         + "-"
-                        + Integer.toString(month);
+                        + dayString;
 
                 startHour = addEventStartTime.getCurrentHour();
                 startMinute = addEventStartTime.getCurrentMinute();

@@ -1,4 +1,4 @@
-package com.android.yunix77.uniplan;
+package com.android.yunix77.uniplan.Fragments_Discontinued;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.yunix77.uniplan.R;
 import com.google.gson.Gson;
 
 import butterknife.Bind;
