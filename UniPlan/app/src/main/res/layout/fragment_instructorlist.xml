@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/instructorlisttitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"
+        android:textSize="20sp"/>
+    <ListView
+        android:id="@+id/instructorlist"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+    </ListView>
+
+    <Button
+        android:id="@+id/addinstructor"
+        android:text = "Add New Course"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</LinearLayout>

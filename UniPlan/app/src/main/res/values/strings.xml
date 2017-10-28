@@ -11,4 +11,7 @@
     <string name="eventtype2">QUIZ</string>
     <string name="eventtype3">ASSIGNMENT</string>
     <string name="eventtype4">MISC.</string>
+
+    <string name="instructortype0">PROFESSOR</string>
+    <string name="instructortype1">T.A.</string>
 </resources>

@@ -61,7 +61,7 @@ public class AddEventFragment extends Fragment {
     @Override
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.fragment_addterm, container, false);
+        myView = inflater.inflate(R.layout.fragment_addevent, container, false);
         db = new DatabaseControl(getActivity());
 
         //Initialize components

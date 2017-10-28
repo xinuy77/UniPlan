@@ -7,4 +7,9 @@
         <item>ASSIGNMENT</item>
         <item>MISC.</item>
     </string-array>
+
+    <string-array name="instructortypes">
+        <item>PROFESSOR</item>
+        <item>T.A.</item>
+    </string-array>
 </resources>
