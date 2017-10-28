@@ -34,7 +34,7 @@ public class DatabaseTester {
         res.add("================END=================");
         res.add("Testing addEvent...");
         res.add("================START===============");
-        res.add(control.addEvent(1, "TEST_EVENT", 0, 0, 0, "2017-09-09", "01:00:00", "00:00:00", null, "RM2017"));
+        res.add(control.addEvent(0, "TEST_EVENT", 0, 0, 0, "2017-09-09", "01:00:00", "00:00:00", null, "RM2017"));
         res.add("================END=================");
         res.add("Testing addTime...");
         res.add("================START===============");

@@ -6,6 +6,8 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="Type">"Type: "</string>
+
     <string name="eventtype0">TEST</string>
     <string name="eventtype1">EXAM</string>
     <string name="eventtype2">QUIZ</string>

@@ -11,7 +11,7 @@ import com.google.gson.Gson;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import com.android.yunix77.uniplan.EventData;
+import com.android.yunix77.uniplan.Fragments_Discontinued.EventData;
 
 public class EventDetailsActivity extends AppCompatActivity {
 
