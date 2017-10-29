@@ -1,4 +1,4 @@
-package com.android.yunix77.uniplan.Fragments_Discontinued;
+package com.android.yunix77.uniplan;
 
 import android.database.Cursor;
 import android.support.v4.app.Fragment;
@@ -17,10 +17,6 @@ import android.widget.Toast;
 import android.widget.Spinner;
 import android.util.Log;
 
-import com.android.yunix77.uniplan.AddCourseFragment;
-import com.android.yunix77.uniplan.DatabaseControl;
-import com.android.yunix77.uniplan.R;
-
 import java.util.ArrayList;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
@@ -28,7 +24,7 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 public class CourseFragment extends Fragment {
     View               view;
     Button             addCourse;
-    DatabaseControl db;
+    DatabaseControl    db;
     LinearLayout       cardLinear;
     Spinner            term;
     ArrayList<Integer> term_id;
@@ -48,7 +44,7 @@ public class CourseFragment extends Fragment {
         return view;
     }
 
-    public void setAddCourseButton() {
+    private void setAddCourseButton() {
         if(term_id.size() == 0) {
             addCourse.setVisibility(View.GONE);
         }
@@ -56,15 +52,22 @@ public class CourseFragment extends Fragment {
             addCourse.setOnClickListener(new View.OnClickListener() {
                 //Switch to AddTerm fragment - i.e. term input screen
                 public void onClick(View v) {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("T_ID", term_id.get(term.getSelectedItemPosition()));
+
+                    AddCourseFragment add_course = new AddCourseFragment();
+                    add_course.setArguments(bundle);
+
                     final FragmentTransaction trans = getFragmentManager().beginTransaction();
-                    trans.replace(R.id.include, new AddCourseFragment(term_id.get(term.getSelectedItemPosition())));
+                    trans.replace(R.id.include, add_course);
                     trans.addToBackStack(null);
                     trans.commit();
                 }
             });
         }
     }
-    public void fillTerm(Spinner term) {
+
+    private void fillTerm(Spinner term) {
         Cursor               terms    = db.getTerms();
         ArrayAdapter<String> adapter  = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item);
 
@@ -99,7 +102,7 @@ public class CourseFragment extends Fragment {
         });
     }
 
-    public void fillCard() {
+    private void fillCard() {
         Cursor cursor = null;
         int counter   = 0;
         if(term_id.size() != 0)
@@ -126,6 +129,17 @@ public class CourseFragment extends Fragment {
                     cardView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("C_ID", (Integer)v.getTag());
+
+                            ViewCourseFragment c_detail = new ViewCourseFragment();
+                            c_detail.setArguments(bundle);
+
+                            final FragmentTransaction trans = getFragmentManager().beginTransaction();
+                            trans.replace(R.id.include, c_detail);
+                            trans.addToBackStack(null);
+                            trans.commit();
                             //Toast.makeText(getContext(), String.valueOf(v.getTag()) + " course, show detail", Toast.LENGTH_SHORT).show();
                         }
                     });

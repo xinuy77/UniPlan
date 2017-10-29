@@ -187,6 +187,26 @@ public class DatabaseControl {
         return c;
     }
 
+    public Cursor getCourseById(int c_id) {
+        //DB in read mode
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        //Arguments for query
+        String[] args = {Integer.toString(c_id)};
+        //Query Course table by Term ID
+       /* Cursor c = db.query(
+                "Course",       //Query Course table
+                null,           //Query all columns
+                "TERM_ID = ?",  //Query rows by TERM_ID
+                args,           //Query by inputted TERM_ID
+                null,           //No grouping
+                null,           //No HAVING clause
+                null            //No ordering
+        );*/
+        Cursor c = db.rawQuery("SELECT * FROM Course WHERE _ID=?", args);
+        return c;
+    }
+
     public Cursor getLatestCourse() {
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c          = db.rawQuery("SELECT * FROM Course ORDER BY _ID DESC LIMIT 1", null);
@@ -253,7 +273,7 @@ public class DatabaseControl {
                 args,           //Query by inputted PARENT_ID and type
                 null,           //No grouping
                 null,           //No HAVING clause
-                "DAY, START_TIME"            //Order by date and time
+                null//"DAY, START_TIME"            //Order by date and time
         );
         return c;
     }

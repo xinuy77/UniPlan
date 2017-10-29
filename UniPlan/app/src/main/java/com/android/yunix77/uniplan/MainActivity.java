@@ -13,8 +13,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.android.yunix77.uniplan.Fragments_Discontinued.CourseFragment;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener ,
         appTitleInterface{
@@ -64,7 +62,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         if(currentFragment != null){
-            FragmentManager fm = getSupportFragmentManager();
+            FragmentManager fm     = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.include, currentFragment);
             ft.addToBackStack(null); //default is the previous one
@@ -72,6 +70,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         DrawerLayout drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
+
         drawer.closeDrawer(GravityCompat.START);
     }
 

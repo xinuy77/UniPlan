@@ -1,62 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <EditText
-        android:id="@+id/editCName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.05"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Course Name"
-        android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/editCCode"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.05"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Course Code"
-        android:textAlignment="center" />
+        android:layout_height="match_parent"
+        android:layout_weight="0.05">
 
-    <EditText
-        android:id="@+id/editLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.05"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Location"
-        android:textAlignment="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editInstructor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.05"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Instructor"
-        android:textAlignment="center" />
+            <EditText
+                android:id="@+id/editCCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Course Code"
+                android:textAlignment="center" />
 
+            <EditText
+                android:id="@+id/editCName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                tools:text="Course Name" />
 
-    <Spinner
-        android:id="@+id/spinnerDay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
-        android:textAlignment="center"
-        android:layout_weight="0.09" />
+            <EditText
+                android:id="@+id/editInstructor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Instructor"
+                android:textAlignment="center" />
 
-    <Button
-        android:id="@+id/submitCourse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
+            <EditText
+                android:id="@+id/editLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Location"
+                android:textAlignment="center" />
+
+            <Spinner
+                android:id="@+id/spinnerDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:spinnerMode="dialog"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:text="Start Time"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TimePicker
+                android:id="@+id/startTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:timePickerMode="spinner" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:text="End Time"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TimePicker
+                android:id="@+id/endTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:timePickerMode="spinner" />
+
+            <Button
+                android:id="@+id/submitCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:text="Submit" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

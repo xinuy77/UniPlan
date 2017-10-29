@@ -60,6 +60,10 @@ public class DatabaseTester {
         res.add("================START===============");
         res = cursorToArr(control.getEvents(1), res);
         res.add("================END=================");
+        res.add("Testing getTime...");
+        res.add("================START===============");
+       // res = cursorToArr(control.getEvents(1), res);
+        res.add("================END=================");
 
         return res;
     }
