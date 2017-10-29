@@ -1,0 +1,6 @@
+Goals for week 6:
+	- Start working on required UI's and relevant functions
+Achievement:
+ 	- Required Course functions (adding / viewing detail) and UI complete
+Goals for week 7:
+	- Complete Deliverable 2
