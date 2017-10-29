@@ -1,0 +1,9 @@
+LairuWu_DevLog Week6
+
+Finished:
+1. Used a new method to implement fragments, now our app can change pages
+2. Debugged some details
+
+Going to:
+Debug
+Prepare for Deliverable 2
