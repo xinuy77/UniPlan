@@ -92,10 +92,10 @@ public class ViewTermFragment extends Fragment {
 
         String semester;
         switch (cursor.getInt(semCol)){
-            case 1: semester = "Fall";
-            case 2: semester = "Winter";
-            case 3: semester = "Summer";
-            default: semester = "Unknown";
+            case 1: semester = "Fall"; break;
+            case 2: semester = "Winter"; break;
+            case 3: semester = "Summer"; break;
+            default: semester = "Unknown"; break;
         }
         termStrArr.add("SEMESTER: " + semester);
 

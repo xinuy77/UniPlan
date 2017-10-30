@@ -74,13 +74,14 @@ public class ViewEventFragment extends Fragment {
         eventStrArr.add("NAME: " + cursor.getString(nameCol));
 
         String type;
+        Toast.makeText(getActivity(), Integer.toString(cursor.getInt(typeCol)), Toast.LENGTH_SHORT).show();
         switch (cursor.getInt(typeCol)){
-            case 0: type = "Test";
-            case 1: type = "Exam";
-            case 2: type = "Quiz";
-            case 3: type = "Assignment";
-            case 4: type = "Misc.";
-            default: type = "Unknown";
+            case 0: type = "Test"; break;
+            case 1: type = "Exam"; break;
+            case 2: type = "Quiz"; break;
+            case 3: type = "Assignment"; break;
+            case 4: type = "Misc."; break;
+            default: type = "Unknown"; break;
         }
 
         eventStrArr.add("TYPE: " + type);

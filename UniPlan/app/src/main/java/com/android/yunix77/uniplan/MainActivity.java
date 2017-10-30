@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity
         if(id==R.id.nav_outline){
             currentFragment = outlineFragment;
         }
-        else if(id==R.id.nav_course){
+        /*else if(id==R.id.nav_course){
             currentFragment = courseFragment;
-        }
+        }*/
         else if(id==R.id.nav_calendar){
             currentFragment = calendarFragment;
         }

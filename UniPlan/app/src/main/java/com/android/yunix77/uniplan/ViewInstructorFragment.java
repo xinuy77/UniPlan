@@ -66,9 +66,9 @@ public class ViewInstructorFragment extends Fragment {
 
         String type;
         switch (cursor.getInt(typeCol)){
-            case 0: type = "Professor";
-            case 1: type = "T.A.";
-            default: type = "Unknown";
+            case 0: type = "Professor"; break;
+            case 1: type = "T.A."; break;
+            default: type = "Unknown"; break;
         }
         instructorStrArr.add("TYPE: " + type);
         instructorStrArr.add("E-MAIL: " + cursor.getString(emailCol));
