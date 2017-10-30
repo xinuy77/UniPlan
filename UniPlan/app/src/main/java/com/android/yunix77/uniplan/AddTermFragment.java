@@ -51,10 +51,10 @@ public class AddTermFragment extends Fragment {
             //Switch to AddTerm fragment
             public void onClick(View v){
                 sd = sdatePicker.getDayOfMonth();
-                sm = sdatePicker.getMonth();
+                sm = sdatePicker.getMonth() + 1; //January indexed as 0 for some insane reason
                 sy = sdatePicker.getYear();
                 ed = edatePicker.getDayOfMonth();
-                em = edatePicker.getMonth();
+                em = edatePicker.getMonth() + 1;
                 ey = edatePicker.getYear();
                 Date sdate = new Date(sy,sm,sd);
                 Date edate = new Date(ey,em,ed);
@@ -63,19 +63,19 @@ public class AddTermFragment extends Fragment {
                 //  add term to DB and return to Term List
                 if (sdate.before(edate)){
                     String sdString;
-                    if (sd <= 10){sdString = "0" + Integer.toString(sd);}
+                    if (sd < 10){sdString = "0" + Integer.toString(sd);}
                     else{sdString = Integer.toString(sd);}
 
                     String smString;
-                    if (sm <= 10){smString = "0" + Integer.toString(sm);}
+                    if (sm < 10){smString = "0" + Integer.toString(sm);}
                     else{smString = Integer.toString(sm);}
 
                     String edString;
-                    if (ed <= 10){edString = "0" + Integer.toString(ed);}
+                    if (ed < 10){edString = "0" + Integer.toString(ed);}
                     else{edString = Integer.toString(ed);}
 
                     String emString;
-                    if (em <= 10){emString = "0" + Integer.toString(em);}
+                    if (em < 10){emString = "0" + Integer.toString(em);}
                     else{emString = Integer.toString(em);}
 
                     //Formate dates as "YYYY-MM-DD" strings

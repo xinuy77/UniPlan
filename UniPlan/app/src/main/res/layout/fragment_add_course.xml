@@ -22,8 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.09"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Course Code"
+                android:hint="Course Code"
                 android:textAlignment="center" />
 
             <EditText
@@ -32,19 +31,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.09"
                 android:ems="10"
-                android:inputType="textPersonName"
                 android:textAlignment="center"
-                tools:text="Course Name" />
-
-            <EditText
-                android:id="@+id/editInstructor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.09"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Instructor"
-                android:textAlignment="center" />
+                tools:hint="Course Name" />
 
             <EditText
                 android:id="@+id/editLocation"
@@ -52,8 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.09"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Location"
+                android:hint="Location"
                 android:textAlignment="center" />
 
             <Spinner

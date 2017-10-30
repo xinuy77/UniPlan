@@ -9,4 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="411dp"
         android:layout_weight="1.02" />
+
+    <Button
+        android:id="@+id/viewinstructors"
+        android:text = "View Course Instructors"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <Button
+        android:id="@+id/viewevents"
+        android:text = "View Calendar Events"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 </LinearLayout>

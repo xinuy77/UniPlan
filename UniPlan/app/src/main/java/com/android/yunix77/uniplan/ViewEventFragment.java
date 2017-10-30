@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -85,6 +86,7 @@ public class ViewEventFragment extends Fragment {
         eventStrArr.add("TYPE: " + type);
         eventStrArr.add("WEIGHT: " + cursor.getInt(weightCol) + "% of Total Grade");
         eventStrArr.add("GRADE: " + cursor.getInt(gradeCol) + "%");
+        eventStrArr.add("DATE: " + cursor.getString(dateCol));
         eventStrArr.add("STARTS AT: " + cursor.getString(stimeCol));
         eventStrArr.add("ENDS AT: " + cursor.getString(etimeCol));
         eventStrArr.add("LOCATION: " + cursor.getString(locCol));

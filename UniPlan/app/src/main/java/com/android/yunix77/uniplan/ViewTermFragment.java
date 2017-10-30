@@ -57,13 +57,13 @@ public class ViewTermFragment extends Fragment {
 
         //Onclick "View Courses" button
         //Commented out until CourseListFragment or equivalent is implemented
-        /*viewCourses.setOnClickListener(new View.OnClickListener(){
+        viewCourses.setOnClickListener(new View.OnClickListener(){
             //Switch to AddTerm fragment - i.e. term input screen
             public void onClick(View v){
 
                 Bundle bundle = new Bundle(); //Create argument bundle
                 bundle.putInt("TERM_ID", term_id); //Add term id to bundle
-                CourseListFragment courses = new CourseListFragment(); //Create new Courses fragment (to be implemented)
+                CourseFragment courses = new CourseFragment(); //Create new Courses fragment (to be implemented)
                 courses.setArguments(bundle); //Attach arguments to fragment
 
                 final FragmentTransaction trans = getFragmentManager().beginTransaction();
@@ -71,7 +71,7 @@ public class ViewTermFragment extends Fragment {
                 trans.addToBackStack(null);
                 trans.commit();
             }
-        });*/
+        });
 
         //Populate ListView
         SQLiteDatabase readDB = db.helper.getReadableDatabase();

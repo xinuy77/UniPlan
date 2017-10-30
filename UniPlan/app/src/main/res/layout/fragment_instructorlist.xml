@@ -19,7 +19,7 @@
 
     <Button
         android:id="@+id/addinstructor"
-        android:text = "Add New Course"
+        android:text = "Add Instructor"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 

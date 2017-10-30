@@ -19,7 +19,7 @@
 
     <Button
         android:id="@+id/addevent"
-        android:text = "Add New Course"
+        android:text = "Add Calendar Event"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 

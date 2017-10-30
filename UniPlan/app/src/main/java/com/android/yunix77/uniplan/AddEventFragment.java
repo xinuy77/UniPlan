@@ -1,5 +1,6 @@
 package com.android.yunix77.uniplan;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -74,7 +75,7 @@ public class AddEventFragment extends Fragment {
         addEventEndTime = (TimePicker) myView.findViewById(R.id.addeventendtime);
         addEventLocation = (EditText) myView.findViewById(R.id.addeventlocation);
         addEventNotes = (EditText) myView.findViewById(R.id.addeventnotes);
-        submit = (Button) myView.findViewById(R.id.submitTerm);
+        submit = (Button) myView.findViewById(R.id.submitEvent);
 
         courseID = this.getArguments().getInt("COURSE_ID");
 
@@ -84,7 +85,7 @@ public class AddEventFragment extends Fragment {
             public void onClick(View v){
                 eName = addEName.getText().toString();
                 type = addEventType.getSelectedItemPosition();
-
+                Toast.makeText(getActivity(), Integer.toString(type),Toast.LENGTH_SHORT).show();
                 if (addEventWeight.getText().toString().isEmpty()){
                     Toast toast = Toast.makeText(getActivity(),"Please enter WEIGHT", Toast.LENGTH_LONG);
                     toast.show();
@@ -97,18 +98,18 @@ public class AddEventFragment extends Fragment {
                     toast.show();
                     return;
                 }
-                grade = Integer.parseInt(addEventWeight.getText().toString());
+                grade = Integer.parseInt(addEventGrade.getText().toString());
 
                 day = addEventDate.getDayOfMonth();
-                month = addEventDate.getMonth();
+                month = addEventDate.getMonth() + 1;
                 year = addEventDate.getYear();
 
                 String dayString;
-                if (day <= 10){dayString = "0" + Integer.toString(day);}
+                if (day < 10){dayString = "0" + Integer.toString(day);}
                 else{dayString = Integer.toString(day);}
 
                 String monthString;
-                if (month <= 10){monthString = "0" + Integer.toString(month);}
+                if (month < 10){monthString = "0" + Integer.toString(month);}
                 else{monthString = Integer.toString(month);}
 
                 //Formate dates as "YYYY-MM-DD" strings
@@ -117,6 +118,7 @@ public class AddEventFragment extends Fragment {
                         + monthString
                         + "-"
                         + dayString;
+
 
                 startHour = addEventStartTime.getCurrentHour();
                 startMinute = addEventStartTime.getCurrentMinute();

@@ -47,7 +47,7 @@ public class AddInstructorFragment extends Fragment {
         addIName = (EditText) myView.findViewById(R.id.addiname);
         addInstructorStatus = (Spinner) myView.findViewById(R.id.addinstructorstatus);
         addInstructorEmail = (EditText) myView.findViewById(R.id.addinstructoremail);
-        submit = (Button) myView.findViewById(R.id.submitTerm);
+        submit = (Button) myView.findViewById(R.id.submitInstructor);
 
         courseID = this.getArguments().getInt("COURSE_ID");
 

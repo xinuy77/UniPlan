@@ -99,7 +99,7 @@ public class InstructorListFragment extends Fragment {
                 //Bundle ID as argument to new fragment
                 Bundle bundle = new Bundle(); //Create argument bundle
                 bundle.putInt("INSTRUCTOR_ID", term_id); //Add term id to bundle
-                ViewEventFragment event = new ViewEventFragment(); //Create new Courses fragment (to be implemented)
+                ViewInstructorFragment event = new ViewInstructorFragment(); //Create new Courses fragment (to be implemented)
                 event.setArguments(bundle); //Attach arguments to fragment
 
                 final FragmentTransaction trans = getFragmentManager().beginTransaction();

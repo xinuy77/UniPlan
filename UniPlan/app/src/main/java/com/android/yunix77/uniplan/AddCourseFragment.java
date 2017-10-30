@@ -49,8 +49,8 @@ public class AddCourseFragment extends Fragment {
     }
     public String formatTime(TimePicker time) {
         String output = "";
-        int    hour   = time.getHour();
-        int    min    = time.getMinute();
+        int    hour   = time.getCurrentHour();
+        int    min    = time.getCurrentMinute();
 
         if(hour < 10)
             output += "0" + hour + ":";
@@ -76,7 +76,6 @@ public class AddCourseFragment extends Fragment {
         try {
             do {
                 c_id   = cursor.getInt(cursor.getColumnIndex("_id"));
-                result = db.addInstructor(input.get(3), c_id, 0,"nullForNow");
                 result = db.addTime(c_id, 0, input.get(2), null, s_time, e_time, day.getSelectedItemPosition());
             } while (cursor.moveToNext());
         } catch(Exception e) {
@@ -101,13 +100,11 @@ public class AddCourseFragment extends Fragment {
         EditText cname      = (EditText) view.findViewById(R.id.editCName);
         EditText ccode      = (EditText) view.findViewById(R.id.editCCode);
         EditText location   = (EditText) view.findViewById(R.id.editLocation);
-        EditText instructor = (EditText) view.findViewById(R.id.editInstructor);
         input               = new ArrayList<String>();
 
         input.add(cname.getText().toString());
         input.add(ccode.getText().toString());
         input.add(location.getText().toString());
-        input.add(instructor.getText().toString());
         input.add(day.getSelectedItem().toString());
     }
 }

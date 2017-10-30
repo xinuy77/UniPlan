@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,8 +76,22 @@ public class CalendarFragment extends Fragment {
         calendarGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast toast = Toast.makeText(getActivity(),"Clicked" + (position + 1), Toast.LENGTH_SHORT);
+
+
+                Date defDate = (Date) calendarGridView.getItemAtPosition(position);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                String dateArg = df.format(defDate);
+                Toast toast = Toast.makeText(getActivity(), dateArg, Toast.LENGTH_SHORT);
                 toast.show();
+
+                Bundle b = new Bundle();
+                b.putString("DATE", dateArg);
+                CalEventFragment calEvent = new CalEventFragment();
+                calEvent.setArguments(b);
+                final FragmentTransaction trans = getFragmentManager().beginTransaction();
+                trans.replace(R.id.include, calEvent);
+                trans.addToBackStack(null);
+                trans.commit();
             }
         });
 
