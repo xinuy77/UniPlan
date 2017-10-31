@@ -26,8 +26,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by Ra on 2017-10-25.
+/* Code adapted from the following online tutorial:
+https://inducesmile.com/android/how-to-create-android-custom-calendar-view-with-events/
  */
 
 public class CalendarFragment extends Fragment {

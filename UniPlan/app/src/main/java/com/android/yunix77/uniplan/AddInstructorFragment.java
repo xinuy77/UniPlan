@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -64,6 +65,14 @@ public class AddInstructorFragment extends Fragment {
                     toast.show();
                 }
                 else{
+                    if (getActivity().getCurrentFocus() != null) {
+                        InputMethodManager inputManager =
+                                (InputMethodManager) getActivity().
+                                        getSystemService(getActivity().INPUT_METHOD_SERVICE);
+                        inputManager.hideSoftInputFromWindow(
+                                getActivity().getCurrentFocus().getWindowToken(),
+                                InputMethodManager.HIDE_NOT_ALWAYS);
+                    }
                     //Add event to database
                     db.addInstructor(iName,courseID,status,email);
                     //Return to previous page

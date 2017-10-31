@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -85,7 +86,6 @@ public class AddEventFragment extends Fragment {
             public void onClick(View v){
                 eName = addEName.getText().toString();
                 type = addEventType.getSelectedItemPosition();
-                Toast.makeText(getActivity(), Integer.toString(type),Toast.LENGTH_SHORT).show();
                 if (addEventWeight.getText().toString().isEmpty()){
                     Toast toast = Toast.makeText(getActivity(),"Please enter WEIGHT", Toast.LENGTH_LONG);
                     toast.show();
@@ -94,11 +94,9 @@ public class AddEventFragment extends Fragment {
                 weight = Integer.parseInt(addEventWeight.getText().toString());
 
                 if (addEventGrade.getText().toString().isEmpty()){
-                    Toast toast = Toast.makeText(getActivity(),"Please enter GRADE", Toast.LENGTH_LONG);
-                    toast.show();
-                    return;
+                    grade = -1;
                 }
-                grade = Integer.parseInt(addEventGrade.getText().toString());
+                else {grade = Integer.parseInt(addEventGrade.getText().toString());}
 
                 day = addEventDate.getDayOfMonth();
                 month = addEventDate.getMonth() + 1;
@@ -143,7 +141,7 @@ public class AddEventFragment extends Fragment {
                     Toast toast = Toast.makeText(getActivity(),"Please enter a valid WEIGHT", Toast.LENGTH_LONG);
                     toast.show();
                 }
-                else if ((grade < 0) || (grade > 100)){
+                else if (grade > 100){
                     Toast toast = Toast.makeText(getActivity(),"Please enter a valid GRADE", Toast.LENGTH_LONG);
                     toast.show();
                 }
@@ -157,6 +155,14 @@ public class AddEventFragment extends Fragment {
                     toast.show();
                 }
                 else{
+                    if (getActivity().getCurrentFocus() != null) {
+                        InputMethodManager inputManager =
+                                (InputMethodManager) getActivity().
+                                        getSystemService(getActivity().INPUT_METHOD_SERVICE);
+                        inputManager.hideSoftInputFromWindow(
+                                getActivity().getCurrentFocus().getWindowToken(),
+                                InputMethodManager.HIDE_NOT_ALWAYS);
+                    }
                     //Add event to database
                     db.addEvent(courseID, eName, type, weight, grade, date, startTime, endTime, notes, location);
                     //Return to previous page

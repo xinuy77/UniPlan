@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,12 +39,22 @@ public class AddCourseFragment extends Fragment {
 
         submit.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+                if (getActivity().getCurrentFocus() != null) {
+                    InputMethodManager inputManager =
+                            (InputMethodManager) getActivity().
+                                    getSystemService(getActivity().INPUT_METHOD_SERVICE);
+                    inputManager.hideSoftInputFromWindow(
+                            getActivity().getCurrentFocus().getWindowToken(),
+                            InputMethodManager.HIDE_NOT_ALWAYS);
+                }
                 setUserInput();
                 insertDB();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 fm.popBackStack();
             }
         });
+
+
 
         return view;
     }

@@ -19,12 +19,13 @@ import java.util.ArrayList;
 
 
 /*
-    Fragment for list of Events for a given course (ID passed as arg)
+    Fragment for list of Events for a given calendar date
     Includes
-        Button to add Event object to database
-            on select, opens AddEvent Fragment for data input
         ListView containing names of each event
             On select List item, opens ViewEvent fragment providing details for selected event
+    Note:
+        Code adapted from the following online tutorial:
+            https://inducesmile.com/android/how-to-create-android-custom-calendar-view-with-events/
  */
 public class CalEventFragment extends Fragment {
     //Fragment layout (UI)

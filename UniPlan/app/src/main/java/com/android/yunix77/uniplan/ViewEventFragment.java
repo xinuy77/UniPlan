@@ -86,7 +86,10 @@ public class ViewEventFragment extends Fragment {
 
         eventStrArr.add("TYPE: " + type);
         eventStrArr.add("WEIGHT: " + cursor.getInt(weightCol) + "% of Total Grade");
-        eventStrArr.add("GRADE: " + cursor.getInt(gradeCol) + "%");
+        if (cursor.getInt(gradeCol) < 0){
+            eventStrArr.add("GRADE: N/A");
+        }
+        else {eventStrArr.add("GRADE: " + cursor.getInt(gradeCol) + "%");}
         eventStrArr.add("DATE: " + cursor.getString(dateCol));
         eventStrArr.add("STARTS AT: " + cursor.getString(stimeCol));
         eventStrArr.add("ENDS AT: " + cursor.getString(etimeCol));

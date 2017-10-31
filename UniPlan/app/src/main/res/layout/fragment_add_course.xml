@@ -27,12 +27,13 @@
 
             <EditText
                 android:id="@+id/editCName"
+                android:ellipsize="end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.09"
                 android:ems="10"
-                android:textAlignment="center"
-                tools:hint="Course Name" />
+                tools:hint="Course Name"
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/editLocation"
@@ -42,12 +43,22 @@
                 android:ems="10"
                 android:hint="Location"
                 android:textAlignment="center" />
-
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="168dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/Day"
+                android:textSize="20sp" />
             <Spinner
                 android:id="@+id/spinnerDay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="200sp"
+                android:layout_height="38sp"
                 android:layout_weight="0.09"
+                android:layout_gravity="center"
+                android:background="#00ffff"
                 android:spinnerMode="dialog"
                 android:textAlignment="center" />
 

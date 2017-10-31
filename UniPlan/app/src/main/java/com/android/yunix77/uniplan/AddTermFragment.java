@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.support.v4.app.Fragment;
@@ -98,6 +99,14 @@ public class AddTermFragment extends Fragment {
                         sem = 2;
                     }
                     else {sem = 3;}
+                    if (getActivity().getCurrentFocus() != null) {
+                        InputMethodManager inputManager =
+                                (InputMethodManager) getActivity().
+                                        getSystemService(getActivity().INPUT_METHOD_SERVICE);
+                        inputManager.hideSoftInputFromWindow(
+                                getActivity().getCurrentFocus().getWindowToken(),
+                                InputMethodManager.HIDE_NOT_ALWAYS);
+                    }
                     //Add Term to database
                     db.addTerm(sy, sem, sdateString, edateString);
                     //Return to previous page
