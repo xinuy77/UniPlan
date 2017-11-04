@@ -1,0 +1,15 @@
+Goals for week 7:
+  Complete Outline component of UI, allowing user to view and input school info.
+    Use knowledge acquired from Term fragment development to expedite process
+    Learn how to pass arguments between fragments.
+  Assist in creating Calendar component of UI if necessary
+  Assist in write-up of Deliverable 2.
+Accomplishments:
+  Created View, List and Add fragments/layouts for the following Outline components:
+    Events
+    Instructors
+  Made adjustments to Course fragments/layouts (by Yu Yamanaka)
+  Created Calendar component app.
+  Wrote Demo Summary and Status Report of Deliverable 2
+Goals for week 8:
+  Begin development on Weekly Timetable
