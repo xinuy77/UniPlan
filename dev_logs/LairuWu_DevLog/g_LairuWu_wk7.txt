@@ -7,4 +7,6 @@ Finished:
 Going to:
 work on parts of the schedule and the calendar
 implement possible functionallity(but still user requirement first)
+read the structure diagram before all developing steps mentioned above
+(yunix-san and Mr.Rliey did much more that I predicted while I was preparing for midterm exams, thanks a lot)
 Prepare for Deliverable 3
