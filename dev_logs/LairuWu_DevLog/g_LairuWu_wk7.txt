@@ -1,1 +1,10 @@
+LairuWu_DevLog Week7
 
+Finished:
+1. Adjusted details in Demo presentation draft
+2. Completed the presentation of Deliverable 2 and showed our demo of Uniplan
+
+Going to:
+work on parts of the schedule and the calendar
+implement possible functionallity(but still user requirement first)
+Prepare for Deliverable 3
