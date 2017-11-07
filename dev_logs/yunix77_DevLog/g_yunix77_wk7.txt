@@ -1,0 +1,6 @@
+Goals for week 7:
+	- Complete D2
+Accomplishment:
+ 	- Created D2 Component Diagram
+Goals for week 8:
+	- Start developing on required functions that has not been implemented yet  
