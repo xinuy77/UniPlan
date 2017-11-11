@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/nav_outline_group"
+           android:checkableBehavior="single">
         <item
             android:id="@+id/nav_outline"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Outline" />
+            android:icon="@drawable/course"
+            android:title="Course" />
+    </group>
+    <group  android:id="@+id/nav_calendar_group"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_calendar"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/calendar"
             android:title="Calendar" />
+    </group>
+    <group android:id="@+id/nav_timetable_group"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_timetable"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/timetable"
             android:title="Timetable" />
+    </group>
+    <group  android:id="@+id/nav_grades_group"
+            android:checkableBehavior="single">
         <item
             android:id="@+id/nav_grades"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Grades" />
-        <!-- <item
-            android:id="@+id/nav_course"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Course" /> -->
+            android:icon="@drawable/grade"
+            android:title="Grade" />
     </group>
+
+    <!-- <item
+          android:id="@+id/nav_course"
+          android:icon="@drawable/ic_menu_manage"
+          android:title="Course" /> -->
 
 </menu>
