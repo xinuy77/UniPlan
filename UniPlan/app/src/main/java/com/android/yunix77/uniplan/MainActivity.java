@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        outlineFragment    = new OutlineFragment();
+        //outlineFragment    = new OutlineFragment();
         calendarFragment   = new CalendarFragment();
         timetableFragment  = new TimetableFragment();
         gradesFragment     = new GradesFragment();
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
             
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.include, outlineFragment);
+        ft.add(R.id.include, courseFragment);
         ft.commit();
 
         changeFragment(R.id.nav_outline);
