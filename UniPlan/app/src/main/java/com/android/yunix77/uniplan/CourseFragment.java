@@ -23,7 +23,7 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 public class CourseFragment extends Fragment {
     View               view;
-    Button             addCourse;
+    Button             addCourse, addTerm, viewTerm;
     DatabaseControl    db;
     LinearLayout       cardLinear;
     Spinner            term;
@@ -35,15 +35,54 @@ public class CourseFragment extends Fragment {
         db         = new DatabaseControl(getActivity().getApplicationContext());
         cardLinear = (LinearLayout) view.findViewById(R.id.cardLinear);
         addCourse  = (Button) view.findViewById(R.id.addCourse);
+        addTerm    = (Button) view.findViewById(R.id.addTerm);
+        viewTerm   = (Button) view.findViewById(R.id.termDetail);
         term       = (Spinner) view.findViewById(R.id.spinnerTerm);
         term_id    = new ArrayList<Integer>();
-        selected_id = this.getArguments().getInt("TERM_ID");
+      //  selected_id = this.getArguments().getInt("TERM_ID");
 
         fillTerm(term);
         fillCard();
         setAddCourseButton();
-        term.setSelection(term_id.indexOf(selected_id));
+        setAddTermButton();
+        setViewTermButton();
+        //term.setSelection(term_id.indexOf(selected_id));
         return view;
+    }
+
+    private void setViewTermButton() {
+        if(term_id.size() == 0) {
+            viewTerm.setVisibility(View.GONE);
+        }
+        else {
+            viewTerm.setOnClickListener(new View.OnClickListener() {
+                //Switch to AddTerm fragment - i.e. term input screen
+                public void onClick(View v) {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("TERM_ID", term_id.get(term.getSelectedItemPosition()));
+
+                    ViewTermFragment term = new ViewTermFragment();
+                    term.setArguments(bundle);
+
+                    final FragmentTransaction trans = getFragmentManager().beginTransaction();
+                    trans.replace(R.id.include, term);
+                    trans.addToBackStack(null);
+                    trans.commit();
+                }
+            });
+        }
+    }
+
+    private void setAddTermButton() {
+        addTerm.setOnClickListener(new View.OnClickListener() {
+            //Switch to AddTerm fragment - i.e. term input screen
+            public void onClick(View v) {
+                final FragmentTransaction trans = getFragmentManager().beginTransaction();
+                trans.replace(R.id.include, new AddTermFragment());
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
     }
 
     private void setAddCourseButton() {

@@ -9,9 +9,4 @@
         android:layout_height="411dp"
         android:layout_weight="1.02" />
 
-    <Button
-        android:id="@+id/viewcourses"
-        android:text = "View Courses"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
 </LinearLayout>

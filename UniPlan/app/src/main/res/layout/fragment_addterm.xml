@@ -6,14 +6,8 @@
     android:weightSum="1">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text = "Add a Term"
-        android:textSize="40sp"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="SELECT START DATE"
+        android:text="SELECT TERM START DATE"
         android:gravity="center"
         android:background="@color/colorAccent"
         android:textColor="#FFF"
@@ -29,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="SELECT END DATE"
+        android:text="SELECT TERM END DATE"
         android:gravity="center"
         android:background="@color/colorAccent"
         android:textColor="#FFF"

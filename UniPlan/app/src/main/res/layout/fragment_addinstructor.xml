@@ -4,13 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text = "Add an Event"
-        android:textSize="40sp"
-        android:gravity="center"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:hint="Name" />
+                android:hint="Instructor's Name" />
 
             <Space
                 android:layout_width="match_parent"

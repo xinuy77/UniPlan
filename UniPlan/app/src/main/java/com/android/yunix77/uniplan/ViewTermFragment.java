@@ -35,7 +35,6 @@ public class ViewTermFragment extends Fragment {
     //Fragment layout (UI)
     View myView;
     //Fragment UI components
-    Button viewCourses;
     ListView termDetails;
     //Database
     DatabaseControl db;
@@ -48,7 +47,6 @@ public class ViewTermFragment extends Fragment {
         //Inflate Fragment layout
         myView = inflater.inflate(R.layout.fragment_viewterm, container, false);
         //Initialize UI components
-        viewCourses = (Button) myView.findViewById(R.id.viewcourses);
         termDetails = (ListView) myView.findViewById(R.id.termdetails);
         //Initialize database
         db = new DatabaseControl(getActivity().getApplicationContext());
@@ -57,21 +55,6 @@ public class ViewTermFragment extends Fragment {
 
         //Onclick "View Courses" button
         //Commented out until CourseListFragment or equivalent is implemented
-        viewCourses.setOnClickListener(new View.OnClickListener(){
-            //Switch to AddTerm fragment - i.e. term input screen
-            public void onClick(View v){
-
-                Bundle bundle = new Bundle(); //Create argument bundle
-                bundle.putInt("TERM_ID", term_id); //Add term id to bundle
-                CourseFragment courses = new CourseFragment(); //Create new Courses fragment (to be implemented)
-                courses.setArguments(bundle); //Attach arguments to fragment
-
-                final FragmentTransaction trans = getFragmentManager().beginTransaction();
-                trans.replace(R.id.include, courses);
-                trans.addToBackStack(null);
-                trans.commit();
-            }
-        });
 
         //Populate ListView
         SQLiteDatabase readDB = db.helper.getReadableDatabase();

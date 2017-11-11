@@ -96,7 +96,7 @@ public class AddCourseFragment extends Fragment {
     }
 
     private void fillDays(Spinner day) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_single_choice);
         adapter.add("Monday");
         adapter.add("Tuesday");
         adapter.add("Wednesday");

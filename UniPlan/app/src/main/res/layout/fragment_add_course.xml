@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.09"
                 android:ems="10"
-                tools:hint="Course Name"
+                android:hint="Course Name"
                 android:textAlignment="center" />
 
             <EditText

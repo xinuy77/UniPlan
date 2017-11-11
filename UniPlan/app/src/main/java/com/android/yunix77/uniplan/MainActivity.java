@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         Fragment currentFragment = null;
 
         if(id==R.id.nav_outline){
-            currentFragment = outlineFragment;
+            currentFragment = courseFragment;
         }
         /*else if(id==R.id.nav_course){
             currentFragment = courseFragment;
