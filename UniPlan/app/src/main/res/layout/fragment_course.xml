@@ -3,29 +3,53 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Spinner
-        android:id="@+id/spinnerTerm"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="49dp"
-        android:spinnerMode="dialog" />
+        android:layout_height="56dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/addTerm"
+        <Spinner
+            android:id="@+id/spinnerTerm"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_weight="1"
+            android:spinnerMode="dialog" />
+
+        <Button
+            android:id="@+id/addTerm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:text="Add Term"
+            android:background="#0e778d"
+            android:textColor="#fff"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Term" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/addCourse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Course" />
+        <Button
+            android:id="@+id/addCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0e778d"
+            android:textColor="#fff"
+            android:text="Add Course" />
 
-    <Button
-        android:id="@+id/termDetail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Term Detail" />
+        <Button
+            android:id="@+id/termDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:background="#0e778d"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:text="Term Detail" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"

@@ -58,7 +58,6 @@
                 android:layout_height="38sp"
                 android:layout_weight="0.09"
                 android:layout_gravity="center"
-                android:background="#00ffff"
                 android:spinnerMode="dialog"
                 android:textAlignment="center" />
 
@@ -99,6 +98,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.09"
+                android:background="#ffffff"
+                android:textColor="#3232FF"
                 android:text="Submit" />
 
         </LinearLayout>

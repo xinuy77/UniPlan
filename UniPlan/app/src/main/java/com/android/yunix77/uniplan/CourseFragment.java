@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,6 @@ public class CourseFragment extends Fragment {
     LinearLayout       cardLinear;
     Spinner            term;
     ArrayList<Integer> term_id;
-    int                selected_id;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view       = inflater.inflate(R.layout.fragment_course, container, false);
@@ -39,14 +39,13 @@ public class CourseFragment extends Fragment {
         viewTerm   = (Button) view.findViewById(R.id.termDetail);
         term       = (Spinner) view.findViewById(R.id.spinnerTerm);
         term_id    = new ArrayList<Integer>();
-      //  selected_id = this.getArguments().getInt("TERM_ID");
 
         fillTerm(term);
         fillCard();
         setAddCourseButton();
         setAddTermButton();
         setViewTermButton();
-        //term.setSelection(term_id.indexOf(selected_id));
+
         return view;
     }
 
