@@ -1,0 +1,6 @@
+Goals for week 8:
+  Begin development on Weekly Timetable
+Achievements:
+  Created script for Project Demo presentation.
+Goals for week 9:
+  Begin development on Weekly Timetable

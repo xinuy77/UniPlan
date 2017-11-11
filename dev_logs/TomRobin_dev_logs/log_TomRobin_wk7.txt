@@ -1,0 +1,8 @@
+Week 7 Dev Log:
+	Work completed:
+		Presented in-class D2 app functionality
+		Working on a grades fragment
+
+	Duties for next week:
+		Complete grades fragment
+		Implement an overview page for events, grades, etc.

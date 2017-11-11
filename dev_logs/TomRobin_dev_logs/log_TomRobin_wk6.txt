@@ -1,0 +1,7 @@
+Week 6 Dev Log:
+	Work completed: 
+		Due to the calendar being completed, began working on a grades fragment
+
+	Duties for next week:
+		Continue working on grades fragment
+		Implement an overview page for events, grades, etc.
