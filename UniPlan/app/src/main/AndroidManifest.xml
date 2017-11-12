@@ -22,6 +22,8 @@
         <activity
             android:name=".Fragments_Discontinued.EventDetailsActivity"
             android:parentActivityName=".MainActivity" />
+
+        <receiver android:name=".NotificationPublisher" />
     </application>
 
 </manifest>
