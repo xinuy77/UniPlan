@@ -168,9 +168,40 @@ public class AddEventFragment extends Fragment {
                     //Return to previous page
                     FragmentManager fm = getActivity().getSupportFragmentManager();
                     fm.popBackStack();
+
+                    //set event notification
+                    setEventNotification();
                 }
             }
         });
         return myView;
+    }
+    
+    //set event timer notification
+    private void setEventNotification () {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext());
+        builder.setAutoCancel(true);
+        builder.setSmallIcon(R.drawable.ic_menu_gallery);
+        //builder.setTicker("This is a Ticker.");
+        builder.setContentText("This is ContentText which should be replaced by some meaning data!");
+        builder.setContentTitle("Title(repalce me pls)");
+        builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+        //notification.setExtras()
+
+        Intent intent = new Intent(getContext(), MainActivity.class);
+        //intent.putExtra()
+        PendingIntent activity = PendingIntent.getActivity(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(activity);
+
+        Notification notification = builder.build();
+
+        Intent notificationIntent = new Intent(getContext(), com.android.yunix77.uniplan.NotificationPublisher.class);
+        notificationIntent.putExtra(com.android.yunix77.uniplan.NotificationPublisher.NOTIFICATION_ID, com.android.yunix77.uniplan.NotificationPublisher.uniqueID);
+        notificationIntent.putExtra(com.android.yunix77.uniplan.NotificationPublisher.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), com.android.yunix77.uniplan.NotificationPublisher.uniqueID, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
+        //Alarm after 10s
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 10000, pendingIntent);
     }
 }
