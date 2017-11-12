@@ -22,3 +22,4 @@ public class NotificationPublisher extends BroadcastReceiver {
         notificationManager.notify(notificationId, notification);
     }
 }
+ 
