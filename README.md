@@ -1,5 +1,5 @@
-# Mobile App Project
-Main repository for Mobile App Project.    
+# UniPlan
+Main repository for UniPlan.    
 
 ### Preamble
 - Team Name: Team Side Vendor
