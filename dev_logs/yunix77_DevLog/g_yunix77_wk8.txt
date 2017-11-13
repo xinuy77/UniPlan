@@ -1,0 +1,10 @@
+Goals for week 8:
+	- Start developing on required functions that has not been implemented yet
+Accomplishment:
+ 	- Merged certain functionality including 
+		- Course and Outline 
+		- Course view and Instructors
+	- UI tweaks
+Goals for week 9:
+	- Provide assist on functionalities that are currently being developed
+	- more UI tweaks  
