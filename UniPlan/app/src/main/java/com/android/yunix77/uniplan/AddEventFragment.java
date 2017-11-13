@@ -1,10 +1,17 @@
 package com.android.yunix77.uniplan;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
+import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -176,7 +183,10 @@ public class AddEventFragment extends Fragment {
         });
         return myView;
     }
-    
+
+
+
+
     //set event timer notification
     private void setEventNotification () {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext());
@@ -204,4 +214,5 @@ public class AddEventFragment extends Fragment {
         //Alarm after 10s
         alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 10000, pendingIntent);
     }
+
 }
