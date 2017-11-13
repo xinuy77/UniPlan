@@ -1,1 +1,8 @@
+LairuWu_DevLog Week7
 
+Finished:
+1. Built an event notification prototype
+
+Going to:
+Prepare for Deliverable 3
+Complete the part of event notification on time setting(to get the correct current time)
