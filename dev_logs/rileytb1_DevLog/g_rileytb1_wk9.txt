@@ -1,0 +1,9 @@
+Goals for week 8:
+  Begin development on Weekly Timetable
+Achievements:
+  Researched a variety of approaches for creating a weekly timetable
+Goals for week 9:
+  Deliverable 3
+    Create class, sequence diagrams
+    Perform write-up of Design section.
+  Begin development on Weekly Timetable
