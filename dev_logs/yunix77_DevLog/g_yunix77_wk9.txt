@@ -1,0 +1,8 @@
+Goals for week 9:
+	- Provide assist on functionalities that are currently being developed
+	- more UI tweaks  
+Accomplishment:
+ 	- Worked on Deliverable 3 written part with team members
+Goals for week 10:
+	- Be ready for Deliverable 3 interview part
+	- Begin implementing update functions for course related components
