@@ -1,1 +1,9 @@
+LairuWu_DevLog Week9
 
+Finished:
+1. Design pattern in Deliverable 3
+2. Find the method of getting the right notification time
+
+Going to:
+Prepare for the D3 presentation
+Complete the part of event notification on time setting(to get the correct current time)
