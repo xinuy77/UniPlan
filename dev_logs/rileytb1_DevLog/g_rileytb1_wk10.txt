@@ -1,0 +1,16 @@
+Goals for week 10:
+  Deliverable 3
+    Create class, sequence diagrams
+    Perform write-up of Design section.
+  Begin development on Weekly Timetable
+Achievements:
+  Deliverable 3
+    Created class diagrams
+    Performed write-up of Design section
+    Performed editing on Architecture section
+Goals for week 11:
+  Implement weekly timetable
+  Deliverable 4
+    Assist in filming of presentation video
+    Assist with write-up
+  Celebrate
