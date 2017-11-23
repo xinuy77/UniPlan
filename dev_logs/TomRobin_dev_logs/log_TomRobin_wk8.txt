@@ -1,0 +1,9 @@
+Week 8 Dev Log:
+	Work completed:
+		Completed a portion of the grades fragment
+			You can add grades with weighting and the grade given
+			The grades do not correspond to any course
+
+	Duties for next week:
+		Make the grades fragment entries correspond to courses
+		Make grade weightings apply mathematically to the grade

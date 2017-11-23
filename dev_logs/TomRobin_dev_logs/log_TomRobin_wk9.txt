@@ -1,0 +1,6 @@
+Week 9 Dev Log:
+	Work completed:
+		Completed design pattern portion of the architecture section of D3 report
+
+	Duties for next week:
+		Prepare for oral presentation of D3

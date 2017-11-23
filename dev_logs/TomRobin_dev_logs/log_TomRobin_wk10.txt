@@ -1,0 +1,8 @@
+Week 10 Dev Log:
+	Work completed:
+		Not a lot done this week, got stuck on trying to implement course fragment interaction with grades fragment
+		Busy completing other class work, 10 assignments for the last 2 weeks of class is not fun
+
+	Duties for next week:
+		Try to complete the fragment interactivity of grades
+		Prepare for class presentation of D4
