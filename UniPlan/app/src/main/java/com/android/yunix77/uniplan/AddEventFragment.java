@@ -23,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.Date;
 
 
@@ -193,8 +194,8 @@ public class AddEventFragment extends Fragment {
         builder.setAutoCancel(true);
         builder.setSmallIcon(R.drawable.ic_menu_gallery);
         //builder.setTicker("This is a Ticker.");
-        builder.setContentText("This is ContentText which should be replaced by some meaning data!");
-        builder.setContentTitle("Title(repalce me pls)");
+        builder.setContentText(eName);
+        builder.setContentTitle(location);
         builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         //notification.setExtras()
 
@@ -210,9 +211,20 @@ public class AddEventFragment extends Fragment {
         notificationIntent.putExtra(com.android.yunix77.uniplan.NotificationPublisher.NOTIFICATION, notification);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), com.android.yunix77.uniplan.NotificationPublisher.uniqueID, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, month - 5);
+        cal.set(Calendar.HOUR_OF_DAY, day);
+        cal.set(Calendar.HOUR_OF_DAY, startHour);
+        cal.set(Calendar.MINUTE, startMinute);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        cal.add(Calendar.MINUTE, 1);
+
         AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
-        //Alarm after 10s
-        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 10000, pendingIntent);
+        //Alarm before 5 minutes
+        alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+
     }
 
 }
