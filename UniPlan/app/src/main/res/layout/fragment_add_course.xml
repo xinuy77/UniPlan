@@ -35,64 +35,6 @@
                 android:hint="Course Name"
                 android:textAlignment="center" />
 
-            <EditText
-                android:id="@+id/editLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.09"
-                android:ems="10"
-                android:hint="Location"
-                android:textAlignment="center" />
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="168dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/Day"
-                android:textSize="20sp" />
-            <Spinner
-                android:id="@+id/spinnerDay"
-                android:layout_width="200sp"
-                android:layout_height="38sp"
-                android:layout_weight="0.09"
-                android:layout_gravity="center"
-                android:spinnerMode="dialog"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.09"
-                android:text="Start Time"
-                android:textAlignment="center"
-                android:textSize="24sp" />
-
-            <TimePicker
-                android:id="@+id/startTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.09"
-                android:timePickerMode="spinner" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.09"
-                android:text="End Time"
-                android:textAlignment="center"
-                android:textSize="24sp" />
-
-            <TimePicker
-                android:id="@+id/endTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.09"
-                android:timePickerMode="spinner" />
-
             <Button
                 android:id="@+id/submitCourse"
                 android:layout_width="match_parent"

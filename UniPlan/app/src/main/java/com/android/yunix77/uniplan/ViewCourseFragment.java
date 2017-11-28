@@ -20,7 +20,7 @@ public class ViewCourseFragment extends Fragment {
     View            view;
     DatabaseControl db;
     ListView        c_details, i_details;
-    Button          addInstructors, viewEvents, removeCourse;
+    Button          addInstructors, viewEvents, removeCourse, addHours;
     int             c_id;
     String          c_code;
 
@@ -33,11 +33,13 @@ public class ViewCourseFragment extends Fragment {
         i_details       = (ListView) view.findViewById(R.id.instructor_details);
         c_id            =  this.getArguments().getInt("C_ID");
         addInstructors  = (Button) view.findViewById(R.id.addinstructors);
+        addHours        = (Button) view.findViewById(R.id.addHours);
         viewEvents      = (Button) view.findViewById(R.id.viewevents);
         removeCourse    = (Button) view.findViewById(R.id.removeCourse);
 
         fillList();
         setAddInstructorsListener();
+        setAddHoursListener();
         setViewEventsListener();
         setRemoveCourseListener();
 
@@ -95,8 +97,25 @@ public class ViewCourseFragment extends Fragment {
         });
     }
 
+    private void setAddHoursListener() {
+        addHours.setOnClickListener(new View.OnClickListener(){
+            //Switch to AddTerm fragment - i.e. term input screen
+            public void onClick(View v){
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("COURSE_ID", c_id);
+                AddTimeFragment addTime = new AddTimeFragment();
+                addTime.setArguments(bundle);
+                final FragmentTransaction trans = getFragmentManager().beginTransaction();
+                trans.replace(R.id.include, addTime);
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
+    }
+
     private void fillList() {
-        Cursor[] cursor                = {db.getCourseById(c_id), db.getTime(c_id, 0), db.getInstructors(c_id)};
+        Cursor[] cursor                = {db.getCourseById(c_id), db.getInstructors(c_id)};
         String[] days                  = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
         ArrayList<String> details      = new ArrayList<String>();
         ArrayList<String> details_inst = new ArrayList<String>();
@@ -110,14 +129,6 @@ public class ViewCourseFragment extends Fragment {
                         c_code = cursor[i].getString(cursor[i].getColumnIndex("COURSE_CODE"));
                         details.add("Course Code: " + c_code);
                         details.add("Course Name: " + cursor[i].getString(cursor[i].getColumnIndex("CNAME")));
-                    }
-                    else if(i == 1) {
-                        details.add("Location: " + cursor[i].getString(cursor[i].getColumnIndex("LOCATION")));
-                        details.add("Time: "
-                                + cursor[i].getString(cursor[i].getColumnIndex("START_TIME"))
-                                + " - "
-                                + cursor[i].getString(cursor[i].getColumnIndex("END_TIME")));
-                        details.add("Day: " + days[Integer.parseInt(cursor[i].getString(cursor[i].getColumnIndex("DAY")))]);
                     }
                     else {
                         if(cursor[i].getCount() > 0) {

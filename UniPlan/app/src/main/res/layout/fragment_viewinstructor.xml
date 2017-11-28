@@ -3,9 +3,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
+    <Button
+        android:id="@+id/addoffice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="2dp"
+        android:layout_weight="1"
+        android:background="#0e778d"
+        android:textColor="#fff"
+        android:text="Add Office Hours" />
     <ListView
         android:id="@+id/instructordetails"
         android:layout_width="match_parent"
-        android:layout_height="411dp"
-        android:layout_weight="0.96" />
+        android:layout_height="455dp" />
 </LinearLayout>

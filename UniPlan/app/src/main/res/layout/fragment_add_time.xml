@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.05">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="168dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Type:"
+                android:textSize="20sp" />
+            <Spinner
+                android:id="@+id/spinnerType"
+                android:layout_width="200sp"
+                android:layout_height="38sp"
+                android:layout_weight="0.09"
+                android:layout_gravity="center"
+                android:spinnerMode="dialog"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/editLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:ems="10"
+                android:hint="Location"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="168dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/Day"
+                android:textSize="20sp" />
+            <Spinner
+                android:id="@+id/spinnerDay"
+                android:layout_width="200sp"
+                android:layout_height="38sp"
+                android:layout_weight="0.09"
+                android:layout_gravity="center"
+                android:spinnerMode="dialog"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:text="Start Time"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TimePicker
+                android:id="@+id/startTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:timePickerMode="spinner" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:text="End Time"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TimePicker
+                android:id="@+id/endTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:timePickerMode="spinner" />
+
+            <Button
+                android:id="@+id/submitCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.09"
+                android:background="#ffffff"
+                android:textColor="#3232FF"
+                android:text="Submit" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

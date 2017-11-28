@@ -277,6 +277,24 @@ public class DatabaseControl {
         );
         return c;
     }
+    public Cursor getTimeByDay(int p_id, int type, int day) {
+        //DB in read mode
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        //Arguments for query
+        String[] args = {Integer.toString(p_id), Integer.toString(type), Integer.toString(day)};
+        //Query Course table by Term ID
+        Cursor c = db.query(
+                "Time",         //Query Course table
+                null,           //Query all columns
+                "PARENT_ID = ? AND TYPE = ? AND DAY = ?",  //Query rows by parent id and type
+                args,           //Query by inputted PARENT_ID and type
+                null,           //No grouping
+                null,           //No HAVING clause
+                null//"DAY, START_TIME"            //Order by date and time
+        );
+        return c;
+    }
 
     //Update functions
     //Update Term

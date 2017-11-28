@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity
         appTitleInterface{
 
     private DatabaseControl dbControl;
-    private DatabaseTester  test;
+    //private DatabaseTester  test;
                 
     protected Fragment outlineFragment;
     protected Fragment calendarFragment;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
         courseFragment     = new CourseFragment();
             
         dbControl = new DatabaseControl(getApplicationContext());
-        test      = new DatabaseTester(dbControl);
+        //test      = new DatabaseTester(dbControl);
         initUI();
     }
                 

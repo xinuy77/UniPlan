@@ -6,10 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ public class ViewInstructorFragment extends Fragment {
     ListView instructorDetails;
     //Database
     DatabaseControl db;
+    Button addOffice;
     //ID
     int instructor_id;
     //Course Code
@@ -42,6 +45,7 @@ public class ViewInstructorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //Inflate Fragment layout
         myView = inflater.inflate(R.layout.fragment_viewinstructor, container, false);
+        addOffice = (Button) myView.findViewById(R.id.addoffice);
         //Initialize UI components
         instructorDetails = (ListView) myView.findViewById(R.id.instructordetails);
         //Initialize database
@@ -49,6 +53,7 @@ public class ViewInstructorFragment extends Fragment {
         //Get term ID from arguments
         instructor_id = this.getArguments().getInt("INSTRUCTOR_ID");
 
+        setAddOfficeListener();
         //Populate ListView
         SQLiteDatabase readDB = db.helper.getReadableDatabase();
         String query = "SELECT * FROM INSTRUCTOR WHERE _id = ?";
@@ -77,6 +82,23 @@ public class ViewInstructorFragment extends Fragment {
         instructorDetails.setAdapter(myAdapter);
 
         return myView;
+    }
+
+    private void setAddOfficeListener() {
+        addOffice.setOnClickListener(new View.OnClickListener(){
+            //Switch to AddTerm fragment - i.e. term input screen
+            public void onClick(View v){
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("INSTRUCTOR_ID", instructor_id);
+                AddOfficeFragment addTime = new AddOfficeFragment();
+                addTime.setArguments(bundle);
+                final FragmentTransaction trans = getFragmentManager().beginTransaction();
+                trans.replace(R.id.include, addTime);
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
     }
 
 }
