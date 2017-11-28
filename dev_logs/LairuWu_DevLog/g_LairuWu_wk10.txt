@@ -1,1 +1,8 @@
+LairuWu_DevLog Week10
 
+Finished:
+1. D3 presentation
+2. Correct notification time setting, now it can notify the user 5 minutes before the event
+
+Going to:
+Prepare for the D4 presentation
